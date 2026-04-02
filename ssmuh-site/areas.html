@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Areas We Serve — SSMUH.ca | Tri-Cities & Across BC</title>
+<meta name="description" content="SSMUH expertise across British Columbia. Deep knowledge of Port Moody, Coquitlam, Port Coquitlam, and serving the entire lower mainland. Led by Dawar Zada PREC* in the Tri-Cities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --dark: #0f1d32;
+  --blue: #1a5cff;
+  --blue-light: #3b7aff;
+  --blue-glow: rgba(26, 92, 255, 0.15);
+  --teal: #00c2a8;
+  --teal-light: #00e6c8;
+  --gold: #f0b429;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+  --nav-h: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--gray-800);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+}
+.nav-logo {
+  font-size: 1.5rem; font-weight: 800; color: var(--navy);
+  text-decoration: none; letter-spacing: -0.5px;
+  display: flex; align-items: center; gap: 2px;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  color: var(--gray-600); padding: 8px 14px; border-radius: 8px;
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--navy); background: var(--gray-100); }
+.nav-links .new-badge {
+  background: var(--teal); color: white; font-size: 0.625rem;
+  padding: 2px 6px; border-radius: 4px; font-weight: 700;
+  margin-left: 4px; vertical-align: top;
+}
+.nav-cta {
+  background: var(--blue) !important; color: white !important;
+  padding: 10px 20px !important; border-radius: 8px !important;
+  font-weight: 600 !important; transition: var(--transition) !important;
+}
+.nav-cta:hover { background: var(--blue-light) !important; transform: translateY(-1px); }
+
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 40px; height: 40px; align-items: center; justify-content: center;
+}
+.hamburger svg { width: 24px; height: 24px; color: var(--navy); }
+
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: white; z-index: 1001; padding: 24px;
+  flex-direction: column;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.mobile-menu-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--navy); }
+.mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+.mobile-menu nav a {
+  text-decoration: none; font-size: 1.125rem; font-weight: 500;
+  color: var(--gray-700); padding: 14px 16px; border-radius: 10px;
+  transition: var(--transition);
+}
+.mobile-menu nav a:hover { background: var(--gray-100); color: var(--navy); }
+.mobile-menu-ctas { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu-ctas a {
+  text-align: center; padding: 16px; border-radius: 10px;
+  text-decoration: none; font-weight: 600; font-size: 1rem;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2847 40%, #132e52 100%);
+  overflow: hidden; padding-top: var(--nav-h);
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80') center/cover;
+  opacity: 0.12;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(to top, var(--navy), transparent);
+}
+.hero-inner {
+  position: relative; z-index: 2; max-width: 1280px; margin: 0 auto;
+  padding: 80px 24px; width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px; border-radius: 100px; margin-bottom: 24px;
+  color: var(--teal-light); font-size: 0.875rem; font-weight: 500;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  color: white; line-height: 1.15; margin-bottom: 20px; max-width: 700px;
+  font-weight: 700;
+}
+.hero h1 em {
+  font-style: normal; color: var(--teal-light);
+  background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 560px;
+  margin-bottom: 36px; line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue); color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,92,255,0.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08); color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.15); }
+.btn-outline-dark {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--navy); padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 2px solid var(--gray-200);
+}
+.btn-outline-dark:hover { border-color: var(--blue); color: var(--blue); }
+
+/* ── SECTIONS COMMON ── */
+section { padding: 100px 24px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--blue);
+  background: var(--blue-glow); padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+}
+.section-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-desc {
+  font-size: 1.05rem; color: var(--gray-500); max-width: 640px;
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+/* ── FEATURED AREA CARDS ── */
+.featured-area {
+  margin-bottom: 80px;
+}
+.featured-area-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: center;
+}
+.featured-area-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg); position: relative;
+}
+.featured-area-img img {
+  width: 100%; height: 450px; object-fit: cover; display: block;
+}
+.featured-area-content h3 {
+  font-family: 'Playfair Display', serif; font-size: 2rem;
+  color: var(--navy); margin-bottom: 16px; font-weight: 700;
+}
+.featured-area-content h3 em {
+  font-style: normal; color: var(--blue);
+}
+.featured-area-stat {
+  display: flex; gap: 16px; margin-bottom: 24px; padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-200);
+}
+.featured-area-stat-num {
+  font-size: 1.5rem; font-weight: 800; color: var(--blue);
+  font-family: 'Inter', sans-serif;
+}
+.featured-area-stat-label {
+  font-size: 0.85rem; color: var(--gray-600); line-height: 1.5;
+  flex: 1;
+}
+.featured-area-neighborhoods {
+  margin-top: 24px;
+}
+.featured-area-neighborhoods h4 {
+  font-size: 0.85rem; font-weight: 600; color: var(--gray-600);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
+}
+.neighborhood-tags {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.neighborhood-tag {
+  background: var(--gray-100); color: var(--gray-700);
+  padding: 8px 16px; border-radius: 100px; font-size: 0.875rem;
+  font-weight: 500;
+}
+.featured-area-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--blue); font-weight: 600; text-decoration: none;
+  margin-top: 24px; transition: var(--transition);
+}
+.featured-area-link:hover { gap: 12px; }
+
+/* ── ALSO SERVING CARDS ── */
+.also-serving-section { background: var(--gray-50); }
+.area-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.area-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 32px 24px; text-align: center; border: 1px solid var(--gray-200);
+  transition: var(--transition); cursor: pointer;
+}
+.area-card:hover {
+  transform: translateY(-8px); box-shadow: var(--shadow-lg);
+  border-color: var(--blue);
+}
+.area-card-icon {
+  font-size: 2.5rem; margin-bottom: 16px; display: block;
+}
+.area-card h4 {
+  font-size: 1.125rem; font-weight: 700; color: var(--navy);
+  margin-bottom: 8px;
+}
+.area-card p {
+  font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;
+  margin-bottom: 16px;
+}
+.area-card-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--blue); font-size: 0.875rem; font-weight: 600;
+  text-decoration: none; transition: var(--transition);
+}
+.area-card-cta:hover { gap: 10px; }
+
+/* ── MUNICIPAL VARIATIONS SECTION ── */
+.variations-section { background: white; }
+.variations-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.variation-card {
+  border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  padding: 32px; background: var(--gray-50); transition: var(--transition);
+}
+.variation-card:hover { border-color: var(--blue); background: white; }
+.variation-card h4 {
+  font-size: 1.125rem; font-weight: 700; color: var(--navy);
+  margin-bottom: 12px;
+}
+.variation-card p {
+  font-size: 0.875rem; color: var(--gray-600); line-height: 1.7;
+}
+.variation-key {
+  font-size: 0.8rem; color: var(--blue); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  display: inline-block; margin-bottom: 8px;
+}
+
+/* ── GENTLE DENSITY SECTION ── */
+.gentle-section {
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2847 100%);
+  color: white;
+}
+.gentle-section .section-title { color: white; }
+.gentle-section .section-title em {
+  background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.gentle-section .section-desc { color: rgba(255,255,255,0.6); }
+.gentle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.gentle-img { border-radius: var(--radius-lg); overflow: hidden; }
+.gentle-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+.gentle-points { display: flex; flex-direction: column; gap: 24px; }
+.gentle-point {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.gentle-point-icon {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 10px;
+  background: rgba(255,255,255,0.1); display: flex; align-items: center;
+  justify-content: center; color: var(--teal-light); font-size: 1.3rem;
+}
+.gentle-point h4 { color: white; font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+.gentle-point p { font-size: 0.875rem; color: rgba(255,255,255,0.6); }
+
+/* ── CTA BANNER ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--blue) 0%, #0d4ed8 100%);
+  color: white; text-align: center;
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+}
+.cta-section p { font-size: 1.05rem; opacity: 0.85; max-width: 560px; margin: 0 auto 36px; }
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--navy); padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy); color: rgba(255,255,255,0.6); padding: 80px 24px 40px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-brand {
+  font-size: 1.5rem; font-weight: 800; color: white;
+  margin-bottom: 16px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-desc { font-size: 0.875rem; line-height: 1.7; margin-bottom: 20px; }
+.footer h4 {
+  color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a {
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem;
+  transition: var(--transition);
+}
+.footer ul a:hover { color: white; }
+.footer-bottom {
+  max-width: 1280px; margin: 40px auto 0; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem;
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-bottom a:hover { color: white; }
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); display: flex;
+  align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: var(--transition); font-size: 0.9rem;
+}
+.footer-socials a:hover { background: var(--blue); color: white; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .featured-area-grid { grid-template-columns: 1fr; }
+  .area-cards { grid-template-columns: repeat(2, 1fr); }
+  .variations-grid { grid-template-columns: repeat(2, 1fr); }
+  .gentle-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .area-cards { grid-template-columns: 1fr; }
+  .variations-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .featured-area-stat { flex-direction: column; gap: 8px; }
+  section { padding: 60px 16px; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+}
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+      <li><a href="for-homeowners.html">For Homeowners</a></li>
+      <li><a href="areas.html">Areas We Serve</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="consulting.html#book" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════ MOBILE MENU ══════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+    <a href="ssmuh-guide.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">SSMUH Guide</a>
+    <a href="for-homeowners.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">For Homeowners</a>
+    <a href="areas.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Areas We Serve</a>
+    <a href="consulting.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Consulting</a>
+    <a href="faq.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="blog.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="consulting.html#book" style="background:var(--blue);color:white;" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book a Call</a>
+  </div>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> SSMUH Expertise Across BC</div>
+    <h1>SSMUH expertise <em>across British Columbia</em></h1>
+    <p class="hero-sub">Deep knowledge of the Tri-Cities and serving the entire lower mainland. Dawar is your guide through every regional variation of Bill 44.</p>
+    <div class="hero-ctas">
+      <a href="consulting.html#book" class="btn-primary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Book a Discovery Call
+      </a>
+      <a href="#also-serving" class="btn-secondary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Explore Areas
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PORT MOODY (FEATURED) ══════════════════ -->
+<section style="background:white;">
+  <div class="section-inner">
+    <div class="featured-area fade-up">
+      <div class="featured-area-grid">
+        <div>
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Port Moody residential neighbourhood" class="featured-area-img" style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+        </div>
+        <div>
+          <div class="section-badge">Featured Area</div>
+          <h3>Port <em>Moody</em></h3>
+          <p style="font-size:1.05rem;color:var(--gray-600);margin-bottom:32px;line-height:1.7;">Dawar was the first multiplex applicant in Port Moody — deep knowledge of the city's zoning, relationships with planning staff, and proven track record of successful projects.</p>
+
+          <div class="featured-area-stat">
+            <div class="featured-area-stat-num">3,709</div>
+            <div class="featured-area-stat-label">Lots eligible for 4-unit multiplexes</div>
+          </div>
+
+          <div class="featured-area-stat">
+            <div class="featured-area-stat-num">515</div>
+            <div class="featured-area-stat-label">Lots eligible for 6-unit multiplexes (near transit)</div>
+          </div>
+
+          <div class="featured-area-neighborhoods">
+            <h4>Key Neighbourhoods</h4>
+            <div class="neighborhood-tags">
+              <div class="neighborhood-tag">Glenayre</div>
+              <div class="neighborhood-tag">Seaview</div>
+              <div class="neighborhood-tag">College Park</div>
+              <div class="neighborhood-tag">Heritage</div>
+            </div>
+          </div>
+
+          <a href="https://view.portmoody.ca/portal/apps/webappviewer/index.html?id=bb8dde24dcef4b06b1e66c4465a3b80c" class="featured-area-link" target="_blank">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19l-7-7 7-7m8 0l7 7-7 7"/></svg>
+            View Port Moody SSMUH Map
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COQUITLAM (FEATURED) ══════════════════ -->
+<section style="background:var(--gray-50);">
+  <div class="section-inner">
+    <div class="featured-area fade-up">
+      <div class="featured-area-grid" style="grid-template-columns:1fr 1fr;">
+        <div style="order:2;">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Coquitlam neighbourhood" class="featured-area-img" style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+        </div>
+        <div style="order:1;">
+          <div class="section-badge">Featured Area</div>
+          <h3>Coquitlam — <em>Home Base</em></h3>
+          <p style="font-size:1.05rem;color:var(--gray-600);margin-bottom:32px;line-height:1.7;">Stonehaus Realty Corp.'s home city. A rapidly growing SSMUH market with strong planning support and excellent municipal relationships. Coquitlam is actively welcoming multiplex development.</p>
+
+          <div class="featured-area-stat">
+            <div class="featured-area-stat-num">2000+</div>
+            <div class="featured-area-stat-label">Properties eligible for SSMUH in Coquitlam</div>
+          </div>
+
+          <div class="featured-area-stat">
+            <div class="featured-area-stat-num">Strong</div>
+            <div class="featured-area-stat-label">Municipal support for infill housing</div>
+          </div>
+
+          <div class="featured-area-neighborhoods">
+            <h4>Key Neighbourhoods</h4>
+            <div class="neighborhood-tags">
+              <div class="neighborhood-tag">Town Centre</div>
+              <div class="neighborhood-tag">Burke Mountain</div>
+              <div class="neighborhood-tag">Westwood</div>
+              <div class="neighborhood-tag">Eagle Ridge</div>
+            </div>
+          </div>
+
+          <a href="consulting.html#book" class="featured-area-link">
+            Discuss Coquitlam opportunities →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PORT COQUITLAM (FEATURED) ══════════════════ -->
+<section style="background:white;">
+  <div class="section-inner">
+    <div class="featured-area fade-up">
+      <div class="featured-area-grid">
+        <div>
+          <img src="https://images.unsplash.com/photo-1570129477492-45bfe2a3ad76?w=800&q=80" alt="Port Coquitlam neighbourhoods" class="featured-area-img" style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);">
+        </div>
+        <div>
+          <div class="section-badge">Emerging Market</div>
+          <h3>Port <em>Coquitlam</em></h3>
+          <p style="font-size:1.05rem;color:var(--gray-600);margin-bottom:32px;line-height:1.7;">An emerging multiplex market with growing interest in housing diversification. Strong community feedback on increasing density thoughtfully is creating new opportunities for property owners.</p>
+
+          <div class="featured-area-stat">
+            <div class="featured-area-stat-num">~1500</div>
+            <div class="featured-area-stat-label">Properties eligible for SSMUH zoning</div>
+          </div>
+
+          <div class="featured-area-stat">
+            <div class="featured-area-stat-num">Growing</div>
+            <div class="featured-area-stat-label">Council support for gentle density projects</div>
+          </div>
+
+          <div class="featured-area-neighborhoods">
+            <h4>Key Neighbourhoods</h4>
+            <div class="neighborhood-tags">
+              <div class="neighborhood-tag">Downtown</div>
+              <div class="neighborhood-tag">Riverwood</div>
+              <div class="neighborhood-tag">Oxford</div>
+            </div>
+          </div>
+
+          <a href="consulting.html#book" class="featured-area-link">
+            Book a consultation for Port Coquitlam →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ALSO SERVING ══════════════════ -->
+<section class="also-serving-section" id="also-serving">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:60px;">
+      <div class="section-badge">Service Area</div>
+      <h2 class="section-title">Also serving across <em>the lower mainland</em></h2>
+      <p class="section-desc" style="margin:16px auto 0;">Dawar consults throughout British Columbia. Each municipality implements Bill 44 differently — we help you navigate the local rules.</p>
+    </div>
+
+    <div class="area-cards">
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🏘️</span>
+        <h4>Burnaby</h4>
+        <p>Strong SSMUH uptake with active planning support for gentle density infill projects.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🌉</span>
+        <h4>New Westminster</h4>
+        <p>Compact neighbourhoods with excellent transit access and growing multiplex interest.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🏡</span>
+        <h4>Surrey</h4>
+        <p>Large eligible properties across the city with strategic SSMUH opportunities.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🌲</span>
+        <h4>Langley</h4>
+        <p>Growing market with strong development demand and excellent land values.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🏙️</span>
+        <h4>Vancouver</h4>
+        <p>Complex zoning with pockets of major SSMUH opportunity in key neighbourhoods.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🌲</span>
+        <h4>Maple Ridge</h4>
+        <p>Larger properties and growing infill potential across the city.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🏘️</span>
+        <h4>Abbotsford</h4>
+        <p>Abundant opportunity with strong development appetite and municipal support.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+
+      <div class="area-card fade-up">
+        <span class="area-card-icon">🌳</span>
+        <h4>Pitt Meadows</h4>
+        <p>Emerging market with character-driven development and community support.</p>
+        <a href="consulting.html#book" class="area-card-cta">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ MUNICIPAL VARIATIONS ══════════════════ -->
+<section class="variations-section">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:60px;">
+      <div class="section-badge">How SSMUH Rules Vary</div>
+      <h2 class="section-title">Each municipality <em>implements Bill 44 differently</em></h2>
+      <p class="section-desc" style="margin:16px auto 0;">Provincial SSMUH rules give cities flexibility in how they regulate multiplex development. Dawar navigates these local variations to find your best path forward.</p>
+    </div>
+
+    <div class="variations-grid">
+      <div class="variation-card fade-up">
+        <span class="variation-key">Zoning</span>
+        <h4>Eligible Zones</h4>
+        <p>Different cities allow SSMUH in different residential zones. Single-family zones are common, but some cities include RS (residential small lot) or RT (residential townhouse) zones. We confirm your lot's zoning and eligibility.</p>
+      </div>
+
+      <div class="variation-card fade-up">
+        <span class="variation-key">Unit Count</span>
+        <h4>4 or 6 Units?</h4>
+        <p>Most cities allow 4-unit SSMUH by right. The 6-unit option appears in selected areas within 400m of frequent transit. Transit definitions vary by city — we check current transit maps.</p>
+      </div>
+
+      <div class="variation-card fade-up">
+        <span class="variation-key">Design</span>
+        <h4>Setbacks & Height</h4>
+        <p>Each city sets its own requirements for setbacks (distance from property lines), height, lot coverage, and parking. Designs that work in one city may need tweaking in the next.</p>
+      </div>
+
+      <div class="variation-card fade-up">
+        <span class="variation-key">Timeline</span>
+        <h4>Permit Processing</h4>
+        <p>Some cities process SSMUH permits in 3–4 months; others take longer. Staff experience and workload affect timelines. We help set realistic expectations.</p>
+      </div>
+
+      <div class="variation-card fade-up">
+        <span class="variation-key">Stratification</span>
+        <h4>Can You Strata?</h4>
+        <p>Most municipalities allow stratification of SSMUH units, enabling you to sell units individually. Some have minor restrictions. We confirm early so design reflects your exit strategy.</p>
+      </div>
+
+      <div class="variation-card fade-up">
+        <span class="variation-key">Soft Costs</span>
+        <h4>Additional Requirements</h4>
+        <p>Parking, tree protection, neighbourhood engagement, and other soft costs vary by city. Budgeting for these local variations is critical to project viability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GENTLE DENSITY ══════════════════ -->
+<section class="gentle-section">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:60px;">
+      <h2 class="section-title">Gentle density that <em>belongs on your street</em></h2>
+      <p class="section-desc" style="margin:16px auto 0;">SSMUH isn't towers. It's "missing middle" housing — the homes that fit the neighbourhood while adding more people to existing communities.</p>
+    </div>
+
+    <div class="gentle-grid">
+      <div class="fade-up">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f7cbb8665?w=800&q=80" alt="Gentle density neighbourhood example" style="border-radius:var(--radius-lg);overflow:hidden;">
+      </div>
+      <div class="gentle-points fade-up">
+        <div class="gentle-point">
+          <div class="gentle-point-icon">🏘️</div>
+          <div>
+            <h4>Fits the Streetscape</h4>
+            <p>Four units look like two-and-a-half homes. Six units are thoughtfully designed to respect neighbourhood character.</p>
+          </div>
+        </div>
+
+        <div class="gentle-point">
+          <div class="gentle-point-icon">👨‍👩‍👧‍👦</div>
+          <div>
+            <h4>Keeps Families Local</h4>
+            <p>Allows adult children to stay on the same lot. Brings grandparents closer. Makes neighbourhoods multi-generational again.</p>
+          </div>
+        </div>
+
+        <div class="gentle-point">
+          <div class="gentle-point-icon">💰</div>
+          <div>
+            <h4>Increases Property Value</h4>
+            <p>More units mean more revenue and higher eventual sale price. Also makes your property more resilient to future market changes.</p>
+          </div>
+        </div>
+
+        <div class="gentle-point">
+          <div class="gentle-point-icon">🌳</div>
+          <div>
+            <h4>Uses Existing Infrastructure</h4>
+            <p>Infill housing on existing roads and services. No new sprawl, no new environmental footprint. Gentle and efficient.</p>
+          </div>
+        </div>
+
+        <div class="gentle-point">
+          <div class="gentle-point-icon">🤝</div>
+          <div>
+            <h4>Builds Stronger Communities</h4>
+            <p>Younger families, older residents, and existing neighbours coexist. Denser neighbourhoods are often more vibrant and resilient.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CTA BANNER ══════════════════ -->
+<section class="cta-section">
+  <div class="section-inner" style="max-width:720px;margin:0 auto;">
+    <h2>Ready to explore your area?</h2>
+    <p>Dawar knows the rules in your city and has successfully navigated them before. A 30-minute conversation costs nothing and leaves you with a clear picture of what's possible.</p>
+    <div class="cta-buttons">
+      <a href="consulting.html#book" class="btn-white">Book a Discovery Call</a>
+      <a href="index.html#feasibility" class="btn-outline-white">Get Free Feasibility Study</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">SSMUH<span>.ca</span></div>
+      <p class="footer-desc">Helping BC families use the new multiplex rules to keep kids close, age in place, and build long-term value on their own street.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/zadarealestategroup" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/in/dawar-zada-683b1281/" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+        <li><a href="for-homeowners.html">For Homeowners</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="areas.html">Areas We Serve</a></li>
+        <li><a href="for-homeowners.html#scenarios">Multiplex Scenarios</a></li>
+        <li><a href="ssmuh-guide.html#playbook">Gentle Density Playbook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:6048083797">604-808-3797</a></li>
+        <li><a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a></li>
+        <li><a href="https://zadagroup.ca">zadagroup.ca</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SSMUH.ca · Dawar Zada Personal Real Estate Corporation · Stonehaus Realty Corp.</span>
+    <span>All rights reserved.</span>
+  </div>
+  <div style="max-width:1280px;margin:20px auto 0;padding:0 24px;">
+    <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);line-height:1.6;">Disclaimer: Information on this site is for general educational purposes and does not constitute engineering, legal, or formal development advice. Always consult qualified professionals before undertaking any development. Financial projections are estimates only. Dawar Zada, PREC* is a licensed REALTOR operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

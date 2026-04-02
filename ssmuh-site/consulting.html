@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expert SSMUH Consulting | SSMUH.ca</title>
+<meta name="description" content="Expert consulting for multiplex development in BC. Free feasibility studies and paid consulting sessions. Led by Dawar Zada PREC*.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --dark: #0f1d32;
+  --blue: #1a5cff;
+  --blue-light: #3b7aff;
+  --blue-glow: rgba(26, 92, 255, 0.15);
+  --teal: #00c2a8;
+  --teal-light: #00e6c8;
+  --gold: #f0b429;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+  --nav-h: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--gray-800);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+}
+.nav-logo {
+  font-size: 1.5rem; font-weight: 800; color: var(--navy);
+  text-decoration: none; letter-spacing: -0.5px;
+  display: flex; align-items: center; gap: 2px;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  color: var(--gray-600); padding: 8px 14px; border-radius: 8px;
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--navy); background: var(--gray-100); }
+.nav-links .new-badge {
+  background: var(--teal); color: white; font-size: 0.625rem;
+  padding: 2px 6px; border-radius: 4px; font-weight: 700;
+  margin-left: 4px; vertical-align: top;
+}
+.nav-cta {
+  background: var(--blue) !important; color: white !important;
+  padding: 10px 20px !important; border-radius: 8px !important;
+  font-weight: 600 !important; transition: var(--transition) !important;
+}
+.nav-cta:hover { background: var(--blue-light) !important; transform: translateY(-1px); }
+
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 40px; height: 40px; align-items: center; justify-content: center;
+}
+.hamburger svg { width: 24px; height: 24px; color: var(--navy); }
+
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: white; z-index: 1001; padding: 24px;
+  flex-direction: column;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.mobile-menu-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--navy); }
+.mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+.mobile-menu nav a {
+  text-decoration: none; font-size: 1.125rem; font-weight: 500;
+  color: var(--gray-700); padding: 14px 16px; border-radius: 10px;
+  transition: var(--transition);
+}
+.mobile-menu nav a:hover { background: var(--gray-100); color: var(--navy); }
+.mobile-menu-ctas { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu-ctas a {
+  text-align: center; padding: 16px; border-radius: 10px;
+  text-decoration: none; font-weight: 600; font-size: 1rem;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2847 40%, #132e52 100%);
+  overflow: hidden; padding-top: var(--nav-h);
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=80') center/cover;
+  opacity: 0.12;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(to top, var(--navy), transparent);
+}
+.hero-inner {
+  position: relative; z-index: 2; max-width: 1280px; margin: 0 auto;
+  padding: 80px 24px; width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px; border-radius: 100px; margin-bottom: 24px;
+  color: var(--teal-light); font-size: 0.875rem; font-weight: 500;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  color: white; line-height: 1.15; margin-bottom: 20px; max-width: 700px;
+  font-weight: 700;
+}
+.hero h1 em {
+  font-style: normal; color: var(--teal-light);
+  background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 560px;
+  margin-bottom: 36px; line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue); color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,92,255,0.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08); color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.15); }
+.btn-outline-dark {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--navy); padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 2px solid var(--gray-200);
+}
+.btn-outline-dark:hover { border-color: var(--blue); color: var(--blue); }
+
+/* ── SECTIONS COMMON ── */
+section { padding: 100px 24px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--blue);
+  background: var(--blue-glow); padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+}
+.section-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-desc {
+  font-size: 1.05rem; color: var(--gray-500); max-width: 640px;
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+/* ── SERVICE TIERS ── */
+.services-section { background: white; }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.service-card {
+  background: var(--gray-50); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 40px;
+  transition: var(--transition);
+}
+.service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--blue); }
+.service-card.featured {
+  background: linear-gradient(135deg, var(--blue) 0%, #0d4ed8 100%);
+  color: white; border: none;
+}
+.service-card.featured .service-price { color: rgba(255,255,255,0.8); }
+.service-card.featured .service-title { color: white; }
+.service-card.featured .service-desc { color: rgba(255,255,255,0.7); }
+.service-card.featured .service-feature p { color: rgba(255,255,255,0.7); }
+.service-price {
+  font-size: 0.875rem; font-weight: 700; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+}
+.service-title {
+  font-size: 1.5rem; font-weight: 700; color: var(--navy);
+  margin-bottom: 12px;
+}
+.service-desc {
+  font-size: 0.9rem; color: var(--gray-600); margin-bottom: 24px; line-height: 1.7;
+}
+.service-features { display: flex; flex-direction: column; gap: 16px; }
+.service-feature {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.service-feature-icon {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px;
+  background: rgba(26, 92, 255, 0.15); display: flex; align-items: center;
+  justify-content: center; color: var(--blue); font-size: 0.9rem;
+}
+.service-card.featured .service-feature-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+.service-feature h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+.service-card.featured .service-feature h4 { color: white; }
+.service-feature p { font-size: 0.8rem; color: var(--gray-600); }
+.service-cta {
+  margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--gray-200);
+  display: flex; gap: 12px;
+}
+.service-card.featured .service-cta { border-top-color: rgba(255, 255, 255, 0.2); }
+.service-cta a { width: 100%; }
+
+/* ── WHATS INCLUDED ── */
+.included-section { background: var(--gray-50); }
+.included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.included-item {
+  background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  padding: 28px; text-align: center;
+}
+.included-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.included-item h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.included-item p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
+
+/* ── THE PROCESS ── */
+.process-section { background: white; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  margin-top: 40px;
+}
+.process-step {
+  position: relative; background: var(--gray-50); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 28px 24px; text-align: center;
+}
+.process-step::after {
+  content: '→'; position: absolute; right: -28px; top: 50%; transform: translateY(-50%);
+  font-size: 1.5rem; color: var(--gray-300); font-weight: 700;
+}
+.process-step:last-child::after { content: ''; }
+.process-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--blue); color: white; font-weight: 700; font-size: 1.1rem;
+  margin: 0 auto 12px;
+}
+.process-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.process-step p { font-size: 0.8rem; color: var(--gray-600); line-height: 1.5; }
+
+/* ── WHY WORK WITH DAWAR ── */
+.why-section { background: linear-gradient(135deg, var(--navy) 0%, #0d2847 100%); color: white; }
+.why-section .section-title { color: white; }
+.why-section .section-title em {
+  background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.why-section .section-desc { color: rgba(255,255,255,0.6); }
+.why-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.why-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg); padding: 32px;
+  transition: var(--transition);
+}
+.why-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+.why-card h3 { font-size: 1.125rem; font-weight: 700; color: white; margin-bottom: 12px; }
+.why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+/* ── BEFORE YOU LIST ── */
+.before-section { background: white; }
+.before-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.before-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.before-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+.before-features { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+.before-feature {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.before-feature-icon {
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+  background: var(--blue-glow); display: flex; align-items: center;
+  justify-content: center; color: var(--blue); font-size: 1.2rem;
+}
+.before-feature h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.before-feature p { font-size: 0.85rem; color: var(--gray-600); }
+
+/* ── BOOKING SECTION ── */
+.booking-section { background: var(--gray-50); }
+.booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.booking-content h3 { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+.booking-content p { font-size: 0.95rem; color: var(--gray-600); margin-bottom: 24px; line-height: 1.7; }
+.booking-options { display: flex; flex-direction: column; gap: 20px; }
+.booking-option {
+  display: flex; align-items: center; gap: 16px;
+  background: white; border: 1px solid var(--gray-200);
+  border-radius: var(--radius); padding: 20px;
+  transition: var(--transition);
+}
+.booking-option:hover { border-color: var(--blue); background: linear-gradient(to right, var(--blue-glow), transparent); }
+.booking-icon {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+  background: var(--blue-glow); display: flex; align-items: center;
+  justify-content: center; color: var(--blue); font-size: 1.3rem;
+}
+.booking-option-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.booking-option-text a { color: var(--blue); font-weight: 600; text-decoration: none; }
+
+.calendly-box {
+  background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  padding: 32px; height: 900px; overflow-y: auto;
+}
+.calendly-placeholder {
+  background: var(--gray-100); border: 2px dashed var(--gray-300);
+  border-radius: var(--radius); padding: 40px; text-align: center;
+  height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.calendly-placeholder svg { width: 60px; height: 60px; color: var(--gray-400); margin-bottom: 16px; }
+.calendly-placeholder p { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 16px; }
+.calendly-placeholder a { color: var(--blue); font-weight: 600; text-decoration: none; }
+
+/* ── FORM SECTION ── */
+.form-section { background: white; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.form-box {
+  background: var(--gray-50); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); padding: 40px;
+}
+.form-box label {
+  display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-700);
+  margin-bottom: 6px; margin-top: 16px;
+}
+.form-box label:first-of-type { margin-top: 0; }
+.form-box input, .form-box select, .form-box textarea {
+  width: 100%; padding: 12px 16px; border: 1.5px solid var(--gray-200);
+  border-radius: 8px; font-size: 0.9rem; font-family: inherit;
+  background: white; color: var(--gray-800); transition: var(--transition);
+}
+.form-box input:focus, .form-box select:focus, .form-box textarea:focus {
+  outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-glow);
+}
+.form-box textarea { min-height: 80px; resize: vertical; }
+.form-submit {
+  width: 100%; margin-top: 24px; padding: 16px;
+  background: var(--blue); color: white; border: none;
+  border-radius: 10px; font-size: 1rem; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+}
+.form-submit:hover { background: var(--blue-light); }
+.form-note {
+  text-align: center; font-size: 0.8rem; color: var(--gray-400); margin-top: 12px;
+}
+
+/* ── NEWSLETTER ── */
+.newsletter-section { background: linear-gradient(135deg, var(--blue) 0%, #0d4ed8 100%); color: white; text-align: center; }
+.newsletter-section h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-bottom: 12px;
+}
+.newsletter-section p { font-size: 1rem; opacity: 0.85; max-width: 560px; margin: 0 auto 24px; }
+.newsletter-form { display: flex; gap: 12px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+.newsletter-form input {
+  flex: 1; min-width: 200px; padding: 14px 16px; border: none;
+  border-radius: 8px; font-size: 0.9rem; font-family: inherit;
+}
+.newsletter-form button {
+  background: var(--navy); color: white; border: none; padding: 14px 28px;
+  border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition);
+}
+.newsletter-form button:hover { background: var(--dark); transform: translateY(-2px); }
+
+/* ── CTA BANNER ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2847 100%);
+  color: white; text-align: center;
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+}
+.cta-section p { font-size: 1.05rem; opacity: 0.85; max-width: 560px; margin: 0 auto 36px; }
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--navy); padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy); color: rgba(255,255,255,0.6); padding: 80px 24px 40px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-brand {
+  font-size: 1.5rem; font-weight: 800; color: white;
+  margin-bottom: 16px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-desc { font-size: 0.875rem; line-height: 1.7; margin-bottom: 20px; }
+.footer h4 {
+  color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a {
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem;
+  transition: var(--transition);
+}
+.footer ul a:hover { color: white; }
+.footer-bottom {
+  max-width: 1280px; margin: 40px auto 0; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem;
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-bottom a:hover { color: white; }
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); display: flex;
+  align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: var(--transition); font-size: 0.9rem;
+}
+.footer-socials a:hover { background: var(--blue); color: white; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .why-cards { grid-template-columns: repeat(2, 1fr); }
+  .before-grid, .booking-grid, .form-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .process-step::after { right: -20px; font-size: 1.2rem; }
+}
+@media (max-width: 640px) {
+  section { padding: 60px 16px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; gap: 12px; }
+  .process-step::after { content: ''; }
+  .why-cards { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form input { min-width: 100%; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .calendly-box { height: auto; min-height: 600px; }
+}
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+      <li><a href="for-homeowners.html">For Homeowners</a></li>
+      <li><a href="areas.html">Areas We Serve</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#book" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════ MOBILE MENU ══════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Home</a>
+    <a href="ssmuh-guide.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">SSMUH Guide</a>
+    <a href="for-homeowners.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">For Homeowners</a>
+    <a href="areas.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Areas We Serve</a>
+    <a href="consulting.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Consulting</a>
+    <a href="faq.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="blog.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="#book" style="background:var(--blue);color:white;" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book a Call</a>
+    <a href="#form" style="border:2px solid var(--gray-200);color:var(--navy);" onclick="document.getElementById('mobileMenu').classList.remove('open')">Request Feasibility Study</a>
+  </div>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Expert Multiplex Consulting</div>
+    <h1>Expert SSMUH Consulting<br><em>From Feasibility to Built</em></h1>
+    <p class="hero-sub">Two paths forward: A free feasibility review or comprehensive paid consulting. Everything you need to move from "what if" to "let's go."</p>
+    <div class="hero-ctas">
+      <a href="#book" class="btn-primary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Book a Consultation
+      </a>
+      <a href="#form" class="btn-secondary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Free Feasibility Study
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SERVICE TIERS ══════════════════ -->
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <div class="section-badge">Two Ways to Work</div>
+    <h2 class="section-title">Choose the path <em>that fits you</em></h2>
+    <p class="section-desc">Whether you want a quick answer or a deep strategic dive, we've got an option that works.</p>
+    <div class="services-grid" style="margin-top:40px;">
+      <div class="service-card fade-up">
+        <div class="service-price">Free</div>
+        <h3 class="service-title">Feasibility Study</h3>
+        <p class="service-desc">A straight answer on what your lot can do under the new rules.</p>
+        <div class="service-features">
+          <div class="service-feature">
+            <div class="service-feature-icon">📍</div>
+            <div>
+              <h4>Site Review</h4>
+              <p>Dawar walks your lot and assesses existing conditions.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon">📋</div>
+            <div>
+              <h4>Zoning Check</h4>
+              <p>Confirms SSMUH eligibility and unit potential.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon">💬</div>
+            <div>
+              <h4>Preliminary Answer</h4>
+              <p>You get a real, actionable recommendation.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon">✓</div>
+            <div>
+              <h4>No Obligation</h4>
+              <p>This is exploratory — not a sales pitch.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon">⚡</div>
+            <div>
+              <h4>1 Business Day Response</h4>
+              <p>Fast turnaround so you can decide next steps.</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-cta">
+          <a href="#form" class="btn-primary">Request Free Study →</a>
+        </div>
+      </div>
+
+      <div class="service-card service-card.featured fade-up" style="background: linear-gradient(135deg, var(--blue) 0%, #0d4ed8 100%); color: white; border: none;">
+        <div class="service-price" style="color: rgba(255,255,255,0.8);">Investment Varies</div>
+        <h3 class="service-title" style="color: white;">Paid Consulting Session</h3>
+        <p class="service-desc" style="color: rgba(255,255,255,0.7);">Deep strategic guidance for homeowners ready to move forward.</p>
+        <div class="service-features">
+          <div class="service-feature">
+            <div class="service-feature-icon" style="background: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.9);">💰</div>
+            <div>
+              <h4 style="color: white;">Financial Modelling</h4>
+              <p style="color: rgba(255,255,255,0.7);">Pro forma analysis and budget scenarios for your project.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon" style="background: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.9);">👥</div>
+            <div>
+              <h4 style="color: white;">Team Recommendations</h4>
+              <p style="color: rgba(255,255,255,0.7);">Vetted architect, contractor, mortgage broker, and engineer.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon" style="background: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.9);">📅</div>
+            <div>
+              <h4 style="color: white;">Timeline Planning</h4>
+              <p style="color: rgba(255,255,255,0.7);">Realistic timelines from design through construction completion.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon" style="background: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.9);">🏗️</div>
+            <div>
+              <h4 style="color: white;">Co-Development Options</h4>
+              <p style="color: rgba(255,255,255,0.7);">Explore partnership and investment structure possibilities.</p>
+            </div>
+          </div>
+          <div class="service-feature">
+            <div class="service-feature-icon" style="background: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.9);">✓</div>
+            <div>
+              <h4 style="color: white;">Go/No-Go Recommendation</h4>
+              <p style="color: rgba(255,255,255,0.7);">Clear guidance on whether to proceed and how.</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-cta" style="border-top-color: rgba(255, 255, 255, 0.2);">
+          <a href="#book" class="btn-white" style="width: 100%; justify-content: center;">Schedule a Session →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WHAT'S INCLUDED ══════════════════ -->
+<section class="included-section">
+  <div class="section-inner">
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px;">Everything included in <em>consulting work</em></h2>
+    <div class="included-grid">
+      <div class="included-item fade-up">
+        <div class="included-icon">🔍</div>
+        <h3>Site & Property Review</h3>
+        <p>Full assessment of your lot's conditions, constraints, and hidden opportunities for development.</p>
+      </div>
+      <div class="included-item fade-up">
+        <div class="included-icon">💹</div>
+        <h3>Financial Projections</h3>
+        <p>Detailed pro formas showing construction costs, timelines, and return scenarios.</p>
+      </div>
+      <div class="included-item fade-up">
+        <div class="included-icon">🤝</div>
+        <h3>Team Referrals</h3>
+        <p>Introductions to architect, contractor, mortgage broker, and civil engineer vetted over years.</p>
+      </div>
+      <div class="included-item fade-up">
+        <div class="included-icon">📅</div>
+        <h3>Timeline Planning</h3>
+        <p>Realistic milestones from initial design through occupancy and beyond.</p>
+      </div>
+      <div class="included-item fade-up">
+        <div class="included-icon">🛣️</div>
+        <h3>Process Roadmap</h3>
+        <p>Clear understanding of permitting, approvals, and construction sequence.</p>
+      </div>
+      <div class="included-item fade-up">
+        <div class="included-icon">💼</div>
+        <h3>Exit Strategy Analysis</h3>
+        <p>Explore strata, rental, or mixed options to maximize your outcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ THE PROCESS ══════════════════ -->
+<section class="process-section">
+  <div class="section-inner">
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px;">The multiplex journey in <em>five steps</em></h2>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="process-num">1</div>
+        <h3>Request Feasibility</h3>
+        <p>Share your lot details. Dawar reviews and gets back to you within 1 business day.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">2</div>
+        <h3>Discovery Call</h3>
+        <p>30 minutes to clarify your goals, explore options, and discuss next steps together.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">3</div>
+        <h3>Deep Dive Consulting</h3>
+        <p>Financial models, team recommendations, timelines, and a clear go/no-go decision.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">4</div>
+        <h3>Team Assembly</h3>
+        <p>Architect, contractor, engineer, and mortgage broker brought in at the right time.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">5</div>
+        <h3>Permits & Construction</h3>
+        <p>Move forward with confidence, guided by professionals at every stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WHY WORK WITH DAWAR ══════════════════ -->
+<section class="why-section">
+  <div class="section-inner">
+    <h2 class="section-title" style="text-align:center;">Why work with <em>Dawar</em></h2>
+    <p class="section-desc" style="text-align:center;">Specialized expertise, deep local knowledge, and genuine commitment to your success.</p>
+    <div class="why-cards" style="margin-top:40px;">
+      <div class="why-card fade-up">
+        <h3>First Multiplex Applicant</h3>
+        <p>Dawar was the first homeowner in Port Moody to move a multiplex application forward — he knows the challenges because he's lived them.</p>
+      </div>
+      <div class="why-card fade-up">
+        <h3>Met with City Staff</h3>
+        <p>Ongoing dialogue with planning departments across Tri-Cities and Metro Vancouver means clarity on current trends and timing.</p>
+      </div>
+      <div class="why-card fade-up">
+        <h3>Specialized Training</h3>
+        <p>Completed professional development focused specifically on SSMUH implementation and co-development strategy.</p>
+      </div>
+      <div class="why-card fade-up">
+        <h3>20+ Years Experience</h3>
+        <p>Two decades in Metro Vancouver real estate gives perspective on neighbourhoods, market timing, and financial outcomes.</p>
+      </div>
+      <div class="why-card fade-up">
+        <h3>Network of Vetted Pros</h3>
+        <p>Years of partnerships with architects, contractors, engineers, and brokers who understand multiplex projects.</p>
+      </div>
+      <div class="why-card fade-up">
+        <h3>Neighbour First</h3>
+        <p>Dawar lives in the Tri-Cities with his family. He's invested in these communities and approaches every project with genuine care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ BEFORE YOU LIST ══════════════════ -->
+<section class="before-section" id="before">
+  <div class="section-inner">
+    <div class="before-grid">
+      <div class="before-img fade-up">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Strategic property development planning">
+      </div>
+      <div class="fade-up">
+        <div class="section-badge">Before You List</div>
+        <h2 class="section-title">A private network of <em>developers on alert</em></h2>
+        <p class="section-desc">Dawar maintains a private database of experienced developers actively seeking SSMUH-eligible lots. Before you list publicly, there may be a faster, more lucrative path.</p>
+        <div class="before-features">
+          <div class="before-feature">
+            <div class="before-feature-icon">🎯</div>
+            <div>
+              <h4>Targeted Outreach</h4>
+              <p>Your lot reaches developers specifically hunting for multiplex opportunities — not general homebuyers.</p>
+            </div>
+          </div>
+          <div class="before-feature">
+            <div class="before-feature-icon">⚡</div>
+            <div>
+              <h4>Faster Timeline</h4>
+              <p>Direct relationships mean less time on market and faster negotiations.</p>
+            </div>
+          </div>
+          <div class="before-feature">
+            <div class="before-feature-icon">💰</div>
+            <div>
+              <h4>Premium Pricing</h4>
+              <p>Developers value sites cleared for their use — you may command a premium without public marketing.</p>
+            </div>
+          </div>
+          <div class="before-feature">
+            <div class="before-feature-icon">🤝</div>
+            <div>
+              <h4>Co-Development Options</h4>
+              <p>If you'd rather not sell, explore joint venture and profit-sharing structures instead.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ BOOKING SECTION ══════════════════ -->
+<section class="booking-section" id="book">
+  <div class="section-inner">
+    <h2 class="section-title" style="margin-bottom:16px;">Ready to book <em>a consultation?</em></h2>
+    <p style="font-size:1.05rem;color:var(--gray-600);max-width:640px;line-height:1.7;margin-bottom:40px;">Schedule a 30-minute discovery call directly below, or reach out through email or phone. Pick what works for you.</p>
+    <div class="booking-grid">
+      <div>
+        <div class="booking-content">
+          <h3>Multiple ways to connect</h3>
+          <p>Choose the method that works best for you. Dawar responds personally to every inquiry.</p>
+          <div class="booking-options">
+            <div class="booking-option fade-up">
+              <div class="booking-icon">📞</div>
+              <div class="booking-option-text">
+                <h4>Call Directly</h4>
+                <a href="tel:6048083797">604-808-3797</a>
+              </div>
+            </div>
+            <div class="booking-option fade-up">
+              <div class="booking-icon">✉️</div>
+              <div class="booking-option-text">
+                <h4>Send an Email</h4>
+                <a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a>
+              </div>
+            </div>
+            <div class="booking-option fade-up">
+              <div class="booking-icon">📅</div>
+              <div class="booking-option-text">
+                <h4>Schedule Online</h4>
+                <a href="https://calendly.com/dawar-zadagroup/30min">Calendly: 30-Minute Call</a>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--gray-600);margin-top:24px;line-height:1.7;">Dawar Zada Personal Real Estate Corporation<br>Stonehaus Realty Corp. — Independently Owned & Operated<br>Coquitlam, BC</p>
+        </div>
+      </div>
+      <div class="calendly-box fade-up">
+        <div class="calendly-placeholder">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <p>Calendly booking widget</p>
+          <a href="https://calendly.com/dawar-zadagroup/30min">Open in Calendly →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FEASIBILITY FORM ══════════════════ -->
+<section class="form-section" id="form">
+  <div class="section-inner">
+    <div class="form-grid">
+      <div class="fade-up">
+        <div class="section-badge">Free Feasibility Study</div>
+        <h2 class="section-title">Request your <em>free review</em></h2>
+        <p class="section-desc">No cost. No commitment. Just a straight answer on what your property can do under the new rules. Dawar reviews every submission personally and gets back to you within 1 business day.</p>
+        <div style="margin-top:32px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:var(--blue-glow);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">⚡</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy);">Fast Response</div>
+              <p style="font-size:0.85rem;color:var(--gray-600);">You'll hear back within 1 business day with a preliminary answer.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:var(--blue-glow);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">✓</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy);">No Obligation</div>
+              <p style="font-size:0.85rem;color:var(--gray-600);">This is exploratory. You decide if consulting makes sense next.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:var(--blue-glow);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🔒</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy);">Confidential</div>
+              <p style="font-size:0.85rem;color:var(--gray-600);">Your information is private and never shared.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-box fade-up">
+        <h3 style="font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:4px;">Request Your Free Study</h3>
+        <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:16px;">Dawar reviews every request personally. You'll hear back within 1 business day.</p>
+        <form id="feasibilityForm" onsubmit="event.preventDefault();document.getElementById('formThanks').style.display='block';this.style.display='none';">
+          <label>Full name</label>
+          <input type="text" placeholder="Jane Smith" required>
+          <label>Email address</label>
+          <input type="email" placeholder="jane@email.com" required>
+          <label>Phone (optional)</label>
+          <input type="tel" placeholder="604-555-0100">
+          <label>Property address</label>
+          <input type="text" placeholder="123 Your Street, City, BC" required>
+          <label>What's your main goal?</label>
+          <select required>
+            <option value="">Select your goal</option>
+            <option>Create rental income</option>
+            <option>House family members on the same lot</option>
+            <option>Build a new home for myself</option>
+            <option>Maximize property value</option>
+            <option>Age in place in a smaller home</option>
+            <option>I'm just exploring my options</option>
+          </select>
+          <label>Anything else we should know? (optional)</label>
+          <textarea placeholder="Lot size, current home, timeline, questions..."></textarea>
+          <button type="submit" class="form-submit">Send My Feasibility Request →</button>
+          <p class="form-note">Your information stays private. No spam, ever.</p>
+        </form>
+        <div id="formThanks" style="display:none;text-align:center;padding:40px 0;">
+          <div style="font-size:2.5rem;margin-bottom:16px;">✓</div>
+          <h3 style="font-size:1.25rem;color:var(--navy);margin-bottom:8px;">Thank you!</h3>
+          <p style="font-size:0.9rem;color:var(--gray-600);">Dawar is reviewing your information and will be in touch within 1 business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ NEWSLETTER ══════════════════ -->
+<section class="newsletter-section" id="signup">
+  <div class="section-inner" style="max-width:700px;margin:0 auto;">
+    <h2>Stay informed on SSMUH news</h2>
+    <p>Get the latest updates on BC's multiplex rules, financing programs, and success stories — delivered to your inbox.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thanks for signing up!');">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════════ CTA BANNER ══════════════════ -->
+<section class="cta-section">
+  <div class="section-inner" style="max-width:720px;margin:0 auto;">
+    <h2>You bring the lot.<br>Dawar brings the roadmap.</h2>
+    <p>Whether you're testing what might fit or ready to move forward — a conversation costs nothing and leaves you with more information than you had before.</p>
+    <div class="cta-buttons">
+      <a href="#book" class="btn-white">Book Your Consultation</a>
+      <a href="#form" class="btn-outline-white">Request Feasibility Study</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">SSMUH<span>.ca</span></div>
+      <p class="footer-desc">Helping BC families use the new multiplex rules to keep kids close, age in place, and build long-term value on their own street.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/zadarealestategroup" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/in/dawar-zada-683b1281/" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+        <li><a href="for-homeowners.html">For Homeowners</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="areas.html">Areas We Serve</a></li>
+        <li><a href="index.html#scenarios">Multiplex Scenarios</a></li>
+        <li><a href="ssmuh-guide.html#playbook">Gentle Density Playbook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:6048083797">604-808-3797</a></li>
+        <li><a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a></li>
+        <li><a href="https://zadagroup.ca">zadagroup.ca</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SSMUH.ca · Dawar Zada Personal Real Estate Corporation · Stonehaus Realty Corp.</span>
+    <span>All rights reserved.</span>
+  </div>
+  <div style="max-width:1280px;margin:20px auto 0;padding:0 24px;">
+    <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);line-height:1.6;">Disclaimer: Information on this site is for general educational purposes and does not constitute engineering, legal, or formal development advice. Always consult qualified professionals before undertaking any development. Financial projections are estimates only. Dawar Zada, PREC* is a licensed REALTOR operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
