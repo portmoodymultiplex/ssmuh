@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Complete SSMUH Guide — Bill 44 Explained | SSMUH.ca</title>
+<meta name="description" content="The complete guide to Small-Scale Multi-Unit Housing in BC. Learn about Bill 44, how many units fit your lot, zoning, timelines, and the Gentle Density Playbook with strategies for multiplexes, rowhouses, cottage courts, and laneways.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --dark: #0f1d32;
+  --blue: #1a5cff;
+  --blue-light: #3b7aff;
+  --blue-glow: rgba(26, 92, 255, 0.15);
+  --teal: #00c2a8;
+  --teal-light: #00e6c8;
+  --gold: #f0b429;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+  --nav-h: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--gray-800);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+}
+.nav-logo {
+  font-size: 1.5rem; font-weight: 800; color: var(--navy);
+  text-decoration: none; letter-spacing: -0.5px;
+  display: flex; align-items: center; gap: 2px;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  color: var(--gray-600); padding: 8px 14px; border-radius: 8px;
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--navy); background: var(--gray-100); }
+.nav-links .new-badge {
+  background: var(--teal); color: white; font-size: 0.625rem;
+  padding: 2px 6px; border-radius: 4px; font-weight: 700;
+  margin-left: 4px; vertical-align: top;
+}
+.nav-cta {
+  background: var(--blue) !important; color: white !important;
+  padding: 10px 20px !important; border-radius: 8px !important;
+  font-weight: 600 !important; transition: var(--transition) !important;
+}
+.nav-cta:hover { background: var(--blue-light) !important; transform: translateY(-1px); }
+
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 40px; height: 40px; align-items: center; justify-content: center;
+}
+.hamburger svg { width: 24px; height: 24px; color: var(--navy); }
+
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: white; z-index: 1001; padding: 24px;
+  flex-direction: column;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.mobile-menu-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--navy); }
+.mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+.mobile-menu nav a {
+  text-decoration: none; font-size: 1.125rem; font-weight: 500;
+  color: var(--gray-700); padding: 14px 16px; border-radius: 10px;
+  transition: var(--transition);
+}
+.mobile-menu nav a:hover { background: var(--gray-100); color: var(--navy); }
+.mobile-menu-ctas { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu-ctas a {
+  text-align: center; padding: 16px; border-radius: 10px;
+  text-decoration: none; font-weight: 600; font-size: 1rem;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2847 40%, #132e52 100%);
+  overflow: hidden; padding-top: var(--nav-h);
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80') center/cover;
+  opacity: 0.12;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(to top, var(--navy), transparent);
+}
+.hero-inner {
+  position: relative; z-index: 2; max-width: 1280px; margin: 0 auto;
+  padding: 80px 24px; width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 16px; border-radius: 100px; margin-bottom: 24px;
+  color: var(--teal-light); font-size: 0.875rem; font-weight: 500;
+}
+.hero-badge .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  color: white; line-height: 1.15; margin-bottom: 20px; max-width: 700px;
+  font-weight: 700;
+}
+.hero h1 em {
+  font-style: normal; color: var(--teal-light);
+  background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 560px;
+  margin-bottom: 36px; line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue); color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,92,255,0.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.08); color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.15); }
+.btn-outline-dark {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--navy); padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 2px solid var(--gray-200);
+}
+.btn-outline-dark:hover { border-color: var(--blue); color: var(--blue); }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;
+}
+.hero-stat-num {
+  font-size: 1.75rem; font-weight: 800; color: white;
+  font-family: 'Inter', sans-serif;
+}
+.hero-stat-label {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ── SECTIONS COMMON ── */
+section { padding: 100px 24px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--blue);
+  background: var(--blue-glow); padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+}
+.section-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-desc {
+  font-size: 1.05rem; color: var(--gray-500); max-width: 640px;
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+/* ── WHAT IS SSMUH ── */
+.what-ssmuh-section { background: white; }
+.what-ssmuh-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start;
+}
+.what-ssmuh-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg); position: relative;
+}
+.what-ssmuh-img img { width: 100%; height: 450px; object-fit: cover; display: block; }
+.what-ssmuh-features { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+.what-ssmuh-feature {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.what-ssmuh-feature-icon {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 12px;
+  background: var(--blue-glow); display: flex; align-items: center;
+  justify-content: center; color: var(--blue); font-size: 1.4rem;
+}
+.what-ssmuh-feature h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.what-ssmuh-feature p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+/* ── LOT SIZE CHART ── */
+.lot-size-section { background: var(--gray-50); }
+.lot-size-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;
+}
+.lot-size-card {
+  background: white; border-radius: var(--radius-lg); padding: 32px;
+  border: 2px solid var(--gray-200); transition: var(--transition);
+}
+.lot-size-card:hover {
+  border-color: var(--blue); box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.lot-size-card h3 {
+  font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+}
+.lot-size-card .metric {
+  font-size: 1.4rem; font-weight: 800; color: var(--blue); margin-bottom: 16px;
+}
+.lot-size-card p {
+  font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 16px;
+}
+.lot-size-card ul {
+  list-style: none; display: flex; flex-direction: column; gap: 8px;
+}
+.lot-size-card li {
+  font-size: 0.8rem; color: var(--gray-600); display: flex; gap: 8px;
+}
+.lot-size-card li::before {
+  content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0;
+}
+
+/* ── BILL 44 EXPLAINER ── */
+.bill44-section { background: white; }
+.bill44-content {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start;
+}
+.bill44-text h3 { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+.bill44-text p { font-size: 0.95rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 20px; }
+.bill44-key-facts {
+  background: linear-gradient(135deg, var(--blue-glow), rgba(0,226,200,0.1));
+  border-radius: var(--radius-lg); padding: 32px; margin-top: 32px;
+}
+.bill44-key-facts h4 {
+  font-size: 0.9rem; font-weight: 700; color: var(--blue); text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 20px;
+}
+.bill44-key-facts ul {
+  list-style: none; display: flex; flex-direction: column; gap: 12px;
+}
+.bill44-key-facts li {
+  font-size: 0.85rem; color: var(--gray-700); display: flex; gap: 12px; line-height: 1.6;
+}
+.bill44-key-facts li::before {
+  content: '→'; color: var(--teal); font-weight: 700; flex-shrink: 0;
+}
+.bill44-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.bill44-img img { width: 100%; height: 500px; object-fit: cover; display: block; }
+
+/* ── ZONING & ELIGIBILITY ── */
+.zoning-section { background: var(--gray-50); }
+.zoning-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px;
+}
+.zoning-card {
+  background: white; border-radius: var(--radius-lg); padding: 32px;
+  border: 1px solid var(--gray-200);
+}
+.zoning-card h3 {
+  font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px;
+  display: flex; gap: 10px; align-items: center;
+}
+.zoning-card h3::before {
+  content: ''; display: block; width: 4px; height: 24px;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  border-radius: 2px;
+}
+.zoning-card p {
+  font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 16px;
+}
+.zoning-card ul {
+  list-style: none;
+}
+.zoning-card li {
+  font-size: 0.85rem; color: var(--gray-600); padding: 8px 0;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; gap: 8px;
+}
+.zoning-card li::before {
+  content: '◆'; color: var(--blue); font-size: 0.6rem; flex-shrink: 0;
+}
+
+/* ── PROCESS TIMELINE ── */
+.timeline-section { background: white; }
+.timeline-wrapper {
+  position: relative; padding: 40px 0;
+  margin-top: 40px;
+}
+.timeline-wrapper::before {
+  content: ''; position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 2px; background: var(--gray-200);
+}
+.timeline-items {
+  display: flex; flex-direction: column; gap: 40px;
+}
+.timeline-item {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  align-items: center;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+  text-align: right; order: -1;
+}
+.timeline-dot {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 16px; height: 16px; border-radius: 50%;
+  background: white; border: 4px solid var(--blue);
+  z-index: 10;
+}
+.timeline-content {
+  position: relative; padding-bottom: 20px;
+}
+.timeline-month {
+  font-size: 0.8rem; font-weight: 700; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
+}
+.timeline-title {
+  font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;
+}
+.timeline-desc {
+  font-size: 0.85rem; color: var(--gray-600); line-height: 1.7;
+}
+
+/* ── MUNICIPAL ADOPTION ── */
+.adoption-section { background: var(--navy); color: white; }
+.adoption-section .section-title { color: white; }
+.adoption-section .section-title em {
+  background: linear-gradient(135deg, var(--teal-light), var(--blue-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.adoption-section .section-desc { color: rgba(255,255,255,0.6); }
+.adoption-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;
+}
+.adoption-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg); padding: 24px; transition: var(--transition);
+}
+.adoption-card:hover {
+  background: rgba(255,255,255,0.08); transform: translateY(-4px);
+}
+.adoption-status {
+  display: inline-block; font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
+}
+.adoption-status.adopted {
+  background: rgba(0,226,200,0.2); color: var(--teal-light);
+}
+.adoption-status.pending {
+  background: rgba(240,180,41,0.2); color: var(--gold);
+}
+.adoption-status.exploring {
+  background: rgba(26,92,255,0.2); color: var(--blue-light);
+}
+.adoption-card h3 {
+  font-size: 1rem; font-weight: 700; color: white; margin-bottom: 8px;
+}
+.adoption-card p {
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6;
+}
+
+/* ── PLAYBOOK SECTION ── */
+.playbook-section { background: white; }
+.playbook-intro {
+  max-width: 640px; margin-bottom: 48px;
+}
+.playbook-tabs {
+  display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap;
+}
+.playbook-tab {
+  padding: 12px 24px; border-radius: 100px; border: 1.5px solid var(--gray-200);
+  background: white; font-size: 0.875rem; font-weight: 600;
+  color: var(--gray-600); cursor: pointer; transition: var(--transition);
+}
+.playbook-tab.active, .playbook-tab:hover {
+  background: var(--navy); color: white; border-color: var(--navy);
+}
+.playbook-cards {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.playbook-card {
+  background: white; border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--gray-200); transition: var(--transition);
+}
+.playbook-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.playbook-card-img {
+  height: 240px; background: var(--gray-100); overflow: hidden; position: relative;
+}
+.playbook-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.playbook-card-label {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--navy); color: white; padding: 6px 14px;
+  border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+}
+.playbook-card-body { padding: 28px; }
+.playbook-card-body h3 {
+  font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;
+}
+.playbook-card-body p {
+  font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px;
+}
+.playbook-specs {
+  display: flex; flex-direction: column; gap: 12px; padding-top: 20px;
+  border-top: 1px solid var(--gray-200);
+}
+.playbook-spec {
+  display: flex; justify-content: space-between; font-size: 0.85rem;
+}
+.playbook-spec-label { color: var(--gray-500); }
+.playbook-spec-value { color: var(--navy); font-weight: 600; }
+
+/* ── BENEFITS SECTION ── */
+.benefits-section { background: var(--gray-50); }
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 40px;
+}
+.benefit-item {
+  background: white; border-radius: var(--radius-lg); padding: 32px;
+  border: 1px solid var(--gray-200);
+}
+.benefit-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: var(--blue-glow); display: flex; align-items: center;
+  justify-content: center; color: var(--blue); font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+.benefit-item h3 {
+  font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px;
+}
+.benefit-item p {
+  font-size: 0.9rem; color: var(--gray-600); line-height: 1.7;
+}
+
+/* ── DESIGN REQUIREMENTS ── */
+.design-section { background: white; }
+.design-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: start; margin-top: 40px;
+}
+.design-requirements {
+  display: flex; flex-direction: column; gap: 24px;
+}
+.requirement-block {
+  border-left: 4px solid var(--blue); padding-left: 20px;
+}
+.requirement-block h4 {
+  font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+}
+.requirement-block p {
+  font-size: 0.85rem; color: var(--gray-600); line-height: 1.7;
+}
+.design-img {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.design-img img { width: 100%; height: 450px; object-fit: cover; display: block; }
+
+/* ── CTA BANNER ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--blue) 0%, #0d4ed8 100%);
+  color: white; text-align: center;
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+}
+.cta-section p { font-size: 1.05rem; opacity: 0.85; max-width: 560px; margin: 0 auto 36px; }
+.cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white; color: var(--navy); padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: white; padding: 16px 32px;
+  border-radius: 10px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; transition: var(--transition);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy); color: rgba(255,255,255,0.6); padding: 80px 24px 40px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-brand {
+  font-size: 1.5rem; font-weight: 800; color: white;
+  margin-bottom: 16px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-desc { font-size: 0.875rem; line-height: 1.7; margin-bottom: 20px; }
+.footer h4 {
+  color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a {
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem;
+  transition: var(--transition);
+}
+.footer ul a:hover { color: white; }
+.footer-bottom {
+  max-width: 1280px; margin: 40px auto 0; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem;
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-bottom a:hover { color: white; }
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); display: flex;
+  align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: var(--transition); font-size: 0.9rem;
+}
+.footer-socials a:hover { background: var(--blue); color: white; }
+
+/* ── FADE-IN ANIMATION ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .what-ssmuh-grid, .bill44-content, .design-grid { grid-template-columns: 1fr; }
+  .lot-size-grid { grid-template-columns: repeat(2, 1fr); }
+  .adoption-grid { grid-template-columns: repeat(2, 1fr); }
+  .zoning-grid { grid-template-columns: 1fr; }
+  .playbook-cards { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .timeline-wrapper::before { left: 24px; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-item:nth-child(odd) .timeline-content { text-align: left; order: 0; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .lot-size-grid { grid-template-columns: 1fr; }
+  .adoption-grid { grid-template-columns: 1fr; }
+  .playbook-cards { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas a { text-align: center; justify-content: center; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  section { padding: 60px 16px; }
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ssmuh-guide.html">Guide</a></li>
+      <li><a href="for-homeowners.html">For Homeowners</a></li>
+      <li><a href="areas.html">Areas</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="consulting.html#book" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <div class="nav-logo">SSMUH<span>.ca</span></div>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="ssmuh-guide.html">Guide</a>
+    <a href="for-homeowners.html">For Homeowners</a>
+    <a href="areas.html">Areas</a>
+    <a href="consulting.html">Consulting</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="consulting.html#book" style="background: var(--blue); color: white;">Book a Call</a>
+  </div>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Bill 44 Guide
+    </div>
+    <h1>Small-Scale Multi-Unit Housing (SSMUH) — <em>The Complete BC Guide</em></h1>
+    <p class="hero-sub">Everything you need to know about the most significant change to residential zoning in a generation. From feasibility to construction, this is the playbook for building duplexes, triplexes, fourplexes, and laneways on single-family lots.</p>
+    <div class="hero-ctas">
+      <a href="#what-is" class="btn-primary">Read the Guide</a>
+      <a href="consulting.html#book" class="btn-secondary">Get a Feasibility Study</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">Bill 44</div>
+        <div class="hero-stat-label">Provincial Legislation</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-label">Units Maximum (Most Lots)</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-label">Units Near Transit</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">18-30mo</div>
+        <div class="hero-stat-label">Project Timeline</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WHAT IS SSMUH ══════════════════ -->
+<section class="what-ssmuh-section" id="what-is">
+  <div class="section-inner">
+    <div class="section-badge">The Basics</div>
+    <h2 class="section-title">What is SSMUH and <em>why does it matter?</em></h2>
+    <p class="section-desc">Small-Scale Multi-Unit Housing (SSMUH) is provincial legislation that fundamentally changes what you can build on a residential lot in British Columbia.</p>
+
+    <div class="what-ssmuh-grid">
+      <div>
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80" alt="Modern multi-unit housing development" class="what-ssmuh-img">
+      </div>
+      <div>
+        <h3 style="font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:20px;">The Shift: From Rezoning to "As-of-Right"</h3>
+        <p style="font-size:0.95rem;color:var(--gray-600);line-height:1.8;margin-bottom:20px;">For decades, building a duplex or triplex on a residential lot required rezoning — a political and expensive process that took years. Bill 44 changes that. Now, most residential lots automatically qualify for up to 4 units without rezoning. The legal hurdle is gone.</p>
+
+        <div class="what-ssmuh-features">
+          <div class="what-ssmuh-feature fade-up">
+            <div class="what-ssmuh-feature-icon">✓</div>
+            <div>
+              <h4>No Rezoning Required</h4>
+              <p>Most lots qualify automatically. Check your lot size and you already know what's possible.</p>
+            </div>
+          </div>
+          <div class="what-ssmuh-feature fade-up">
+            <div class="what-ssmuh-feature-icon">💰</div>
+            <div>
+              <h4>Wealth Building</h4>
+              <p>Rental income, property appreciation, and a pathway to stratification and individual unit sales.</p>
+            </div>
+          </div>
+          <div class="what-ssmuh-feature fade-up">
+            <div class="what-ssmuh-feature-icon">👨‍👩‍👧</div>
+            <div>
+              <h4>Multigenerational Living</h4>
+              <p>Keep aging parents, adult children, or extended family on the same lot — independent but close.</p>
+            </div>
+          </div>
+          <div class="what-ssmuh-feature fade-up">
+            <div class="what-ssmuh-feature-icon">📈</div>
+            <div>
+              <h4>Property Value Increase</h4>
+              <p>Single-family homes in SSMUH-enabled areas have seen sustained value appreciation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ LOT SIZE ELIGIBILITY ══════════════════ -->
+<section class="lot-size-section" id="lot-size">
+  <div class="section-inner">
+    <div class="section-badge">Lot Size Rules</div>
+    <h2 class="section-title">How many units can your lot <em>actually fit?</em></h2>
+    <p class="section-desc">SSMUH eligibility depends on lot size and proximity to frequent transit. Use this chart to find out what's possible on your property.</p>
+
+    <div class="lot-size-grid">
+      <div class="lot-size-card fade-up">
+        <h3>Under 280 m²</h3>
+        <div class="metric">3 Units</div>
+        <p>Smaller residential lots can now accommodate a triplex. Perfect for infill on tight urban lots or secondary suites + laneway combinations.</p>
+        <ul>
+          <li>Triplex (3 units)</li>
+          <li>Suite + Laneway + Main</li>
+          <li>Flexible configuration</li>
+        </ul>
+      </div>
+      <div class="lot-size-card fade-up">
+        <h3>280 m² – 4,050 m²</h3>
+        <div class="metric">4 Units</div>
+        <p>Most single-family residential lots fall into this category. A fourplex, rowhouse-style units, or a cottage court is all possible by right.</p>
+        <ul>
+          <li>Fourplex</li>
+          <li>Rowhouse row</li>
+          <li>Cottage court</li>
+          <li>Hybrid layouts</li>
+        </ul>
+      </div>
+      <div class="lot-size-card fade-up">
+        <h3>Within 400m of Transit</h3>
+        <div class="metric">6 Units</div>
+        <p>Lots near frequent transit stops (bus lines with 15-minute service or better) qualify for up to 6 units — the highest allowance.</p>
+        <ul>
+          <li>6-unit configurations</li>
+          <li>Denser rowhouse layout</li>
+          <li>Mixed-use possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ BILL 44 EXPLAINED ══════════════════ -->
+<section class="bill44-section" id="bill44">
+  <div class="section-inner">
+    <div class="section-badge">The Legislation</div>
+    <h2 class="section-title">Bill 44: <em>What changed and why</em></h2>
+
+    <div class="bill44-content">
+      <div class="bill44-text">
+        <h3>The Problem Bill 44 Solves</h3>
+        <p>BC was facing a housing affordability crisis. Single-family zoning protected neighborhoods but locked out new supply. Young families couldn't afford to stay in their communities. Aging homeowners had no path to downsize on their street. Landlords couldn't build rental housing without years of rezoning battles.</p>
+
+        <p>Bill 44, passed in 2023 and implemented in 2024, requires all BC municipalities to allow small-scale multi-unit housing on residential lots "as of right" — meaning no rezoning application, no public hearing, no political gatekeeping.</p>
+
+        <h3 style="margin-top:24px;">What This Means for You</h3>
+        <p>Your single-family lot is now legally zoned for 3–6 units. You don't need to ask permission. You just need a building permit, a competent design, and the financing to build. The legal risk is gone.</p>
+
+        <div class="bill44-key-facts">
+          <h4>Key Facts About Bill 44</h4>
+          <ul>
+            <li>Provincial legislation; applies to all BC municipalities</li>
+            <li>No rezoning required for qualifying lots</li>
+            <li>Design must meet setback, height, and parking standards</li>
+            <li>Strata title (separate unit ownership) is permitted in most cases</li>
+            <li>Rental housing qualifies for provincial incentives and tax breaks</li>
+            <li>Municipalities cannot prohibit SSMUH; they can only set design standards</li>
+            <li>Implementation timeline: 2024–2026 (rolling across BC)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1489066672696-9c6f7d5b5d8e?w=800&q=80" alt="Legislative bill 44 BC housing" class="bill44-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ZONING & ELIGIBILITY ══════════════════ -->
+<section class="zoning-section" id="zoning">
+  <div class="section-inner">
+    <div class="section-badge">Requirements</div>
+    <h2 class="section-title">Eligible lot types and <em>zoning requirements</em></h2>
+    <p class="section-desc">Not every lot qualifies for SSMUH. Check these criteria to confirm your property is eligible.</p>
+
+    <div class="zoning-grid">
+      <div class="zoning-card fade-up">
+        <h3>Who Qualifies</h3>
+        <p>Your property must be:</p>
+        <ul>
+          <li>Zoned single-family residential (RS or equivalent)</li>
+          <li>Under 4,050 m² (or over if near frequent transit)</li>
+          <li>In a municipality that has adopted SSMUH rules (rolling adoption across BC)</li>
+          <li>Not subject to a strata prohibition (rare)</li>
+          <li>On a lot with legal legal road frontage</li>
+        </ul>
+      </div>
+      <div class="zoning-card fade-up">
+        <h3>Design Constraints</h3>
+        <p>Your development must meet:</p>
+        <ul>
+          <li>Municipal setback requirements (typically 3–5 metres front)</li>
+          <li>Maximum height (usually 10.7m / 3.5 storeys)</li>
+          <li>Parking requirements (1–2 spaces per unit)</li>
+          <li>Lot coverage limits (typically 50–60%)</li>
+          <li>Floor space ratio (FSR) limits</li>
+          <li>Soft landscaping / tree preservation</li>
+        </ul>
+      </div>
+      <div class="zoning-card fade-up">
+        <h3>Known Restrictions</h3>
+        <p>A few edge cases may exclude your lot:</p>
+        <ul>
+          <li>Lots under 280 m² in some jurisdictions</li>
+          <li>Properties in strata-only zones (check with city)</li>
+          <li>Steep slopes or environmental constraints</li>
+          <li>Agricultural land reserve (ALR) properties</li>
+          <li>First Nations reserve land</li>
+        </ul>
+      </div>
+      <div class="zoning-card fade-up">
+        <h3>Municipal Adoption Status</h3>
+        <p>Adoption timeline varies. Check your city's website or:</p>
+        <ul>
+          <li>Call your municipal planning department</li>
+          <li>Ask your realtor or architect</li>
+          <li>Email Dawar for a quick confirmation</li>
+          <li>Even if "not yet adopted," plan ahead</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PROCESS TIMELINE ══════════════════ -->
+<section class="timeline-section" id="timeline">
+  <div class="section-inner">
+    <div class="section-badge">Project Phases</div>
+    <h2 class="section-title">From idea to move-in: <em>The 18–30 month journey</em></h2>
+    <p class="section-desc">Most multiplex projects take between 18 and 30 months from first feasibility conversation to move-in. Here's what each phase entails.</p>
+
+    <div class="timeline-wrapper">
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-content fade-up">
+            <div class="timeline-month">Phase 1: 1–2 months</div>
+            <div class="timeline-title">Feasibility & Due Diligence</div>
+            <div class="timeline-desc">Confirm lot eligibility, research zoning, order survey, soil testing, and get preliminary architect feedback. Dawar provides this free. Cost: $0–$3,000 for third-party testing if needed.</div>
+          </div>
+          <div style="position:relative;height:100%;"><span class="timeline-dot" style="top:0;"></span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content fade-up">
+            <div class="timeline-month">Phase 2: 2–4 months</div>
+            <div class="timeline-title">Design & Planning</div>
+            <div class="timeline-desc">Work with architect on unit layouts, parking, landscaping. One or more design iterations. Cost: $8,000–$25,000 for architectural services (depending on complexity).</div>
+          </div>
+          <div style="position:relative;height:100%;"><span class="timeline-dot" style="top:0;"></span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content fade-up">
+            <div class="timeline-month">Phase 3: 3–9 months</div>
+            <div class="timeline-title">Permits & Approvals</div>
+            <div class="timeline-desc">Submit building permit application, engineering review, municipal staff feedback, permit issuance. Timeline depends on municipal workload. Cost: $2,000–$8,000 in engineering and permit fees.</div>
+          </div>
+          <div style="position:relative;height:100%;"><span class="timeline-dot" style="top:0;"></span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content fade-up">
+            <div class="timeline-month">Phase 4: 8–14 months</div>
+            <div class="timeline-title">Construction</div>
+            <div class="timeline-desc">Demolition, excavation, foundation, framing, mechanical/electrical, finishing. Cost: $1.2M–$2.2M+ for a full fourplex, depending on construction costs and finishes.</div>
+          </div>
+          <div style="position:relative;height:100%;"><span class="timeline-dot" style="top:0;"></span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content fade-up">
+            <div class="timeline-month">Phase 5: 1–2 months</div>
+            <div class="timeline-title">Occupancy & Lease-Up</div>
+            <div class="timeline-desc">Final inspection, occupancy permit, tenant move-ins (if renting). First rental income begins flowing or units sell if stratified.</div>
+          </div>
+          <div style="position:relative;height:100%;"><span class="timeline-dot" style="top:0;"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;background:var(--blue-glow);border-radius:var(--radius-lg);padding:28px;">
+      <h4 style="font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:12px;">Timeline Factors That Matter</h4>
+      <ul style="list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+        <li style="font-size:0.85rem;color:var(--gray-600);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">→</span> <span>Municipal capacity (some cities slower than others)</span></li>
+        <li style="font-size:0.85rem;color:var(--gray-600);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">→</span> <span>Design complexity and revisions</span></li>
+        <li style="font-size:0.85rem;color:var(--gray-600);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">→</span> <span>Contractor availability and labor market</span></li>
+        <li style="font-size:0.85rem;color:var(--gray-600);display:flex;gap:8px;"><span style="color:var(--blue);font-weight:700;">→</span> <span>Financing speed and conditions</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ MUNICIPAL ADOPTION ══════════════════ -->
+<section class="adoption-section" id="adoption">
+  <div class="section-inner">
+    <div class="section-badge" style="background:rgba(0,226,200,0.15);color:var(--teal-light);">Across BC</div>
+    <h2 class="section-title">SSMUH adoption <em>by municipality</em></h2>
+    <p class="section-desc">Bill 44 requires all BC municipalities to adopt SSMUH bylaws. Here's the status of major cities and regions as of April 2026.</p>
+
+    <div class="adoption-grid">
+      <div class="adoption-card fade-up">
+        <span class="adoption-status adopted">Adopted</span>
+        <h3>Port Moody</h3>
+        <p>Full SSMUH adoption (2024). Up to 4 units on qualifying lots. Dawar's home base and first local applicant.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status adopted">Adopted</span>
+        <h3>Coquitlam</h3>
+        <p>SSMUH bylaws in effect. Lots 280 m²–4,050 m² = 4 units. Design review required.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status adopted">Adopted</span>
+        <h3>Port Coquitlam</h3>
+        <p>Full adoption with parking flexibility for lots near transit. Up to 6 units near SkyTrain.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status adopted">Adopted</span>
+        <h3>Vancouver</h3>
+        <p>Expanded SSMUH pilot. Up to 6 units on most single-family lots citywide. Stratification allowed.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status adopted">Adopted</span>
+        <h3>Burnaby</h3>
+        <p>SSMUH adopted with site-specific variations. Contact planning for your lot.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status adopted">Adopted</span>
+        <h3>Surrey</h3>
+        <p>SSMUH bylaws live. Most RS zones = 4 units. Laneway homes also permitted.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status pending">Pending</span>
+        <h3>Maple Ridge</h3>
+        <p>Adoption in progress (Q3 2026 expected). Preliminary zoning studies underway.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status pending">Pending</span>
+        <h3>Pitt Meadows</h3>
+        <p>Staff review ongoing. Adoption expected mid-2026. Plan ahead if you have a project in mind.</p>
+      </div>
+      <div class="adoption-card fade-up">
+        <span class="adoption-status exploring">Exploring</span>
+        <h3>Other BC Cities</h3>
+        <p>Most smaller municipalities are in the planning or early draft phase. Provincial deadline: 2025/2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GENTLE DENSITY PLAYBOOK ══════════════════ -->
+<section class="playbook-section" id="playbook">
+  <div class="section-inner">
+    <div class="playbook-intro">
+      <div class="section-badge">Design Strategies</div>
+      <h2 class="section-title">The Gentle Density <em>Playbook</em></h2>
+      <p class="section-desc">SSMUH enables four main design strategies. Each has different costs, timelines, returns, and lifestyle fits. Here's how to choose.</p>
+    </div>
+
+    <div class="playbook-cards">
+      <div class="playbook-card fade-up">
+        <div class="playbook-card-img">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" alt="Modern multiplex building">
+          <span class="playbook-card-label">Most Common</span>
+        </div>
+        <div class="playbook-card-body">
+          <h3>Multiplex (4-plex)</h3>
+          <p>Four separate units in one building. Each unit may have its own entrance. The most economical form of density and easiest to lease or sell individually (stratification).</p>
+          <div class="playbook-specs">
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Density</span>
+              <span class="playbook-spec-value">4 units</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Cost (Metro Van)</span>
+              <span class="playbook-spec-value">$1.2M–$1.8M</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Timeline</span>
+              <span class="playbook-spec-value">20–28 months</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Best For</span>
+              <span class="playbook-spec-value">Rental income or strata sales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="playbook-card fade-up">
+        <div class="playbook-card-img">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" alt="Rowhouse townhomes">
+          <span class="playbook-card-label">Family-Friendly</span>
+        </div>
+        <div class="playbook-card-body">
+          <h3>Rowhouse</h3>
+          <p>Individual townhouse-style units joined side-by-side. Each has its own entrance and small yard or patio. Feels more like traditional housing. Easier to strata and sell.</p>
+          <div class="playbook-specs">
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Density</span>
+              <span class="playbook-spec-value">3–4 units</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Cost (Metro Van)</span>
+              <span class="playbook-spec-value">$1.5M–$2.1M</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Timeline</span>
+              <span class="playbook-spec-value">22–30 months</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Best For</span>
+              <span class="playbook-spec-value">Owner-occupied or strata sales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="playbook-card fade-up">
+        <div class="playbook-card-img">
+          <img src="https://images.unsplash.com/photo-1572120471610-0ecbb44114d9?w=800&q=80" alt="Cottage court cluster">
+          <span class="playbook-card-label">Emerging Trend</span>
+        </div>
+        <div class="playbook-card-body">
+          <h3>Cottage Court</h3>
+          <p>Clustered small homes around a shared courtyard. Each unit feels like its own home. Low parking footprint. Most walkable option. Great for multigenerational.</p>
+          <div class="playbook-specs">
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Density</span>
+              <span class="playbook-spec-value">3–4 units</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Cost (Metro Van)</span>
+              <span class="playbook-spec-value">$1.4M–$2.0M</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Timeline</span>
+              <span class="playbook-spec-value">24–32 months</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Best For</span>
+              <span class="playbook-spec-value">Multigenerational, walkable neighborhood</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="playbook-card fade-up">
+        <div class="playbook-card-img">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991ff1a3a97?w=800&q=80" alt="Laneway home addition">
+          <span class="playbook-card-label">Fastest Path</span>
+        </div>
+        <div class="playbook-card-body">
+          <h3>House + Laneway + Suite</h3>
+          <p>Keep your existing home and add a secondary suite inside + a laneway house in the back. Phased approach. Most flexible for staging builds. Lower total cost.</p>
+          <div class="playbook-specs">
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Density</span>
+              <span class="playbook-spec-value">3 units</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Cost (Metro Van)</span>
+              <span class="playbook-spec-value">$350K–$600K (phased)</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Timeline</span>
+              <span class="playbook-spec-value">12–18 months</span>
+            </div>
+            <div class="playbook-spec">
+              <span class="playbook-spec-label">Best For</span>
+              <span class="playbook-spec-value">Lower risk, existing home value, flexibility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ KEY BENEFITS ══════════════════ -->
+<section class="benefits-section" id="benefits">
+  <div class="section-inner">
+    <div class="section-badge">Why SSMUH Matters</div>
+    <h2 class="section-title">The real benefits of <em>building multi-unit housing</em></h2>
+    <p class="section-desc">SSMUH isn't just a legal permission. It's a pathway to financial security, family connection, and community building.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-item fade-up">
+        <div class="benefit-icon">💰</div>
+        <h3>Wealth Building</h3>
+        <p>Rental income covers your mortgage, builds equity, and creates an appreciating asset. Many homeowners see 10–20% annual returns after expense.</p>
+      </div>
+
+      <div class="benefit-item fade-up">
+        <div class="benefit-icon">📈</div>
+        <h3>Property Value Increase</h3>
+        <p>Single-family homes on lots zoned for SSMUH see sustained appreciation. The legal upside is now priced in. Your property is worth more.</p>
+      </div>
+
+      <div class="benefit-item fade-up">
+        <div class="benefit-icon">👨‍👩‍👧</div>
+        <h3>Multigenerational Living</h3>
+        <p>Keep aging parents, adult kids, or extended family on the same lot. Everyone stays independent, but you're close. No nursing home required.</p>
+      </div>
+
+      <div class="benefit-item fade-up">
+        <div class="benefit-icon">🏡</div>
+        <h3>No Rezoning Needed</h3>
+        <p>SSMUH removes the rezoning hurdle. Build faster, at lower legal cost. The political risk is gone. Your application is defensible by right.</p>
+      </div>
+
+      <div class="benefit-item fade-up">
+        <div class="benefit-icon">🔄</div>
+        <h3>Stratification & Exit Options</h3>
+        <p>Most SSMUH projects can be stratified into separate titles. Sell units individually. Your exit strategy is built in from day one.</p>
+      </div>
+
+      <div class="benefit-item fade-up">
+        <div class="benefit-icon">🌱</div>
+        <h3>Community Resilience</h3>
+        <p>More density on your street means better transit, more local spending, stronger neighborhood character. You're part of the housing solution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ DESIGN REQUIREMENTS ══════════════════ -->
+<section class="design-section" id="design">
+  <div class="section-inner">
+    <div class="section-badge">Technical Specs</div>
+    <h2 class="section-title">Parking, setbacks, and <em>design requirements</em></h2>
+
+    <div class="design-grid">
+      <div class="design-requirements">
+        <div class="requirement-block fade-up">
+          <h4>Parking</h4>
+          <p>Typically 1–2 spaces per unit, depending on municipal bylaw. Near transit zones often have reduced minimums. Surface lot, underground, or tandem all acceptable. Cost: $15K–$30K per stall.</p>
+        </div>
+
+        <div class="requirement-block fade-up">
+          <h4>Setbacks</h4>
+          <p>Front yard 3–5m, side yard 1.5–2m (varies by city). Rear setback 20–30% of lot depth. Garages and bay windows have their own rules. Check municipal standards early.</p>
+        </div>
+
+        <div class="requirement-block fade-up">
+          <h4>Maximum Height</h4>
+          <p>Usually 10.7m (3.5 storeys) or 12m (4 storeys) in some progressive cities. Measured from average grade. Parapet and roof structures have sublimits. A 3-storey building hits this in most cases.</p>
+        </div>
+
+        <div class="requirement-block fade-up">
+          <h4>Lot Coverage</h4>
+          <p>Typically 50–60% of lot area. Balconies, stairs, and overhangs may or may not count (depends on city). Leave space for landscape, trees, and drainage.</p>
+        </div>
+
+        <div class="requirement-block fade-up">
+          <h4>Floor Space Ratio (FSR)</h4>
+          <p>Usually 2.0–2.5 FSR. Total building area ÷ lot area. A 2,000 m² lot with 2.0 FSR allows 4,000 m² of floor area across all units.</p>
+        </div>
+
+        <div class="requirement-block fade-up">
+          <h4>Trees & Landscaping</h4>
+          <p>Retain large existing trees where possible. Landscape 15–25% of lot with native plants. Some cities require ground-level green space on every unit.</p>
+        </div>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Modern apartment complex design" class="design-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CTA BANNER ══════════════════ -->
+<section class="cta-section">
+  <div class="section-inner" style="max-width:720px;margin:0 auto;">
+    <h2>Ready to explore SSMUH <br>on your property?</h2>
+    <p>A free feasibility study takes 30 minutes and answers all your questions. No cost. No obligation. Just a straight answer on what your lot can do.</p>
+    <div class="cta-buttons">
+      <a href="consulting.html#book" class="btn-white">Book a Discovery Call</a>
+      <a href="for-homeowners.html" class="btn-outline-white">See Real Scenarios →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">SSMUH<span>.ca</span></div>
+      <p class="footer-desc">Helping BC families use the new multiplex rules to keep kids close, age in place, and build long-term value on their own street.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/zadarealestategroup" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/in/dawar-zada-683b1281/" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+        <li><a href="for-homeowners.html">For Homeowners</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="areas.html">Areas We Serve</a></li>
+        <li><a href="for-homeowners.html#scenarios">Multiplex Scenarios</a></li>
+        <li><a href="ssmuh-guide.html#playbook">Gentle Density Playbook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:6048083797">604-808-3797</a></li>
+        <li><a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a></li>
+        <li><a href="https://zadagroup.ca">zadagroup.ca</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SSMUH.ca · Dawar Zada Personal Real Estate Corporation · Stonehaus Realty Corp.</span>
+    <span>All rights reserved.</span>
+  </div>
+  <div style="max-width:1280px;margin:20px auto 0;padding:0 24px;">
+    <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);line-height:1.6;">Disclaimer: Information on this site is for general educational purposes and does not constitute engineering, legal, or formal development advice. Always consult qualified professionals before undertaking any development. Financial projections are estimates only. Dawar Zada, PREC* is a licensed REALTOR operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

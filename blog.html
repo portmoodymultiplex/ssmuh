@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSMUH Blog — Insights on Housing, Multiplex Strategies & BC Real Estate</title>
+<meta name="description" content="Expert guides, case studies, and insights on SSMUH, multiplex investing, multigenerational housing, and BC's housing evolution. Read the latest from SSMUH.ca">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --dark: #0f1d32;
+  --blue: #1a5cff;
+  --blue-light: #3b7aff;
+  --blue-glow: rgba(26, 92, 255, 0.15);
+  --teal: #00c2a8;
+  --teal-light: #00e6c8;
+  --gold: #f0b429;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+  --nav-h: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--gray-800);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+}
+.nav-logo {
+  font-size: 1.5rem; font-weight: 800; color: var(--navy);
+  text-decoration: none; letter-spacing: -0.5px;
+  display: flex; align-items: center; gap: 2px;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  color: var(--gray-600); padding: 8px 14px; border-radius: 8px;
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--navy); background: var(--gray-100); }
+.nav-links .new-badge {
+  background: var(--teal); color: white; font-size: 0.625rem;
+  padding: 2px 6px; border-radius: 4px; font-weight: 700;
+  margin-left: 4px; vertical-align: top;
+}
+.nav-cta {
+  background: var(--blue) !important; color: white !important;
+  padding: 10px 20px !important; border-radius: 8px !important;
+  font-weight: 600 !important; transition: var(--transition) !important;
+}
+.nav-cta:hover { background: var(--blue-light) !important; transform: translateY(-1px); }
+
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 40px; height: 40px; align-items: center; justify-content: center;
+}
+.hamburger svg { width: 24px; height: 24px; color: var(--navy); }
+
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: white; z-index: 1001; padding: 24px;
+  flex-direction: column;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.mobile-menu-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--navy); }
+.mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+.mobile-menu nav a {
+  text-decoration: none; font-size: 1.125rem; font-weight: 500;
+  color: var(--gray-700); padding: 14px 16px; border-radius: 10px;
+  transition: var(--transition);
+}
+.mobile-menu nav a:hover { background: var(--gray-100); color: var(--navy); }
+.mobile-menu-ctas { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+.mobile-menu-ctas a {
+  text-align: center; padding: 16px; border-radius: 10px;
+  text-decoration: none; font-weight: 600; font-size: 1rem;
+}
+
+/* ── SECTIONS COMMON ── */
+section { padding: 100px 24px; }
+.section-inner { max-width: 1280px; margin: 0 auto; }
+.section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--blue);
+  background: var(--blue-glow); padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+}
+.section-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-desc {
+  font-size: 1.05rem; color: var(--gray-500); max-width: 640px;
+  line-height: 1.7; margin-bottom: 40px;
+}
+
+/* ── BLOG HERO ── */
+.blog-hero {
+  position: relative; min-height: 50vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d2847 40%, #132e52 100%);
+  overflow: hidden; padding-top: var(--nav-h);
+}
+.blog-hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80') center/cover;
+  opacity: 0.12;
+}
+.blog-hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 100px;
+  background: linear-gradient(to top, var(--navy), transparent);
+}
+.blog-hero-inner {
+  position: relative; z-index: 2; max-width: 1280px; margin: 0 auto;
+  padding: 60px 24px; width: 100%;
+}
+.blog-hero h1 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem);
+  color: white; line-height: 1.15; margin-bottom: 16px; max-width: 600px;
+  font-weight: 700;
+}
+.blog-hero-sub {
+  font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ── CATEGORY FILTERS ── */
+.blog-filters {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px;
+}
+.filter-btn {
+  display: inline-flex; align-items: center;
+  background: white; color: var(--gray-700); padding: 10px 20px;
+  border-radius: 100px; font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; transition: var(--transition); border: 2px solid var(--gray-200);
+  cursor: pointer;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--blue); color: white; border-color: var(--blue);
+}
+
+/* ── FEATURED POST ── */
+.featured-post {
+  margin-bottom: 60px;
+}
+.featured-post-card {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: center; background: white;
+  border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  overflow: hidden; transition: var(--transition);
+}
+.featured-post-card:hover { box-shadow: var(--shadow-lg); }
+.featured-post-img { height: 100%; min-height: 400px; overflow: hidden; }
+.featured-post-img img {
+  width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;
+}
+.featured-post-card:hover .featured-post-img img { transform: scale(1.05); }
+.featured-post-body { padding: 40px; }
+.featured-post-meta {
+  display: flex; gap: 16px; font-size: 0.85rem; color: var(--gray-500);
+  margin-bottom: 16px;
+}
+.featured-post-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  color: white; background: var(--blue); padding: 4px 12px; border-radius: 4px;
+  margin-bottom: 12px;
+}
+.featured-post-title {
+  font-size: 1.75rem; font-weight: 700; color: var(--navy);
+  margin-bottom: 16px; line-height: 1.3;
+}
+.featured-post-excerpt {
+  font-size: 1rem; color: var(--gray-500); line-height: 1.7;
+  margin-bottom: 28px;
+}
+.featured-post-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--blue); font-weight: 600; text-decoration: none;
+  transition: var(--transition);
+}
+.featured-post-link:hover { gap: 12px; }
+
+/* ── BLOG GRID ── */
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.blog-card {
+  border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  overflow: hidden; transition: var(--transition); display: flex;
+  flex-direction: column;
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.blog-card-img { height: 220px; overflow: hidden; }
+.blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.blog-card:hover .blog-card-img img { transform: scale(1.05); }
+.blog-card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.blog-card-meta {
+  display: flex; gap: 12px; font-size: 0.75rem; color: var(--gray-400);
+  margin-bottom: 12px;
+}
+.blog-card-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  color: var(--blue); background: var(--blue-glow);
+  padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; width: fit-content;
+}
+.blog-card-title {
+  font-size: 1.1rem; font-weight: 700; color: var(--navy);
+  margin-bottom: 10px; line-height: 1.4;
+}
+.blog-card-excerpt {
+  font-size: 0.85rem; color: var(--gray-500); line-height: 1.6;
+  margin-bottom: 16px; flex-grow: 1;
+}
+.blog-card-link {
+  color: var(--blue); font-weight: 600; text-decoration: none;
+  font-size: 0.9rem; transition: var(--transition);
+}
+.blog-card-link:hover { color: var(--blue-light); }
+
+/* ── NEWSLETTER SIGNUP ── */
+.newsletter-section {
+  background: linear-gradient(135deg, var(--blue) 0%, #0d4ed8 100%);
+  color: white; text-align: center;
+}
+.newsletter-section h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 16px;
+}
+.newsletter-section p { font-size: 1rem; opacity: 0.85; max-width: 560px; margin: 0 auto 32px; }
+.newsletter-form {
+  display: flex; gap: 12px; max-width: 500px; margin: 0 auto;
+  flex-direction: column;
+}
+.newsletter-form input {
+  width: 100%; padding: 16px; border: none; border-radius: 10px;
+  font-size: 0.95rem; font-family: inherit;
+  background: rgba(255,255,255,0.95); color: var(--navy);
+}
+.newsletter-form input::placeholder { color: var(--gray-400); }
+.newsletter-form button {
+  padding: 16px 32px; background: white; color: var(--blue);
+  border: none; border-radius: 10px; font-weight: 600; font-size: 1rem;
+  cursor: pointer; transition: var(--transition);
+}
+.newsletter-form button:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy); color: rgba(255,255,255,0.6); padding: 80px 24px 40px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer-brand {
+  font-size: 1.5rem; font-weight: 800; color: white;
+  margin-bottom: 16px;
+}
+.footer-brand span { color: var(--blue); }
+.footer-desc { font-size: 0.875rem; line-height: 1.7; margin-bottom: 20px; }
+.footer h4 {
+  color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a {
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem;
+  transition: var(--transition);
+}
+.footer ul a:hover { color: white; }
+.footer-bottom {
+  max-width: 1280px; margin: 40px auto 0; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem;
+}
+.footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-bottom a:hover { color: white; }
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.08); display: flex;
+  align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: var(--transition); font-size: 0.9rem;
+}
+.footer-socials a:hover { background: var(--blue); color: white; }
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .featured-post-card { grid-template-columns: 1fr; }
+  .featured-post-img { min-height: 300px; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .newsletter-form { flex-direction: row; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .blog-filters { margin-bottom: 32px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .featured-post-body { padding: 24px; }
+  .featured-post-title { font-size: 1.3rem; }
+  .newsletter-form { flex-direction: column; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  section { padding: 60px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ NAVBAR ══════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <ul class="nav-links">
+      <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+      <li><a href="for-homeowners.html">For Homeowners</a></li>
+      <li><a href="areas.html">Areas We Serve</a></li>
+      <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="consulting.html#book" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Open menu">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════ MOBILE MENU ══════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="nav-logo">SSMUH<span>.ca</span></a>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  </div>
+  <nav>
+    <a href="ssmuh-guide.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">SSMUH Guide</a>
+    <a href="for-homeowners.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">For Homeowners</a>
+    <a href="areas.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Areas We Serve</a>
+    <a href="consulting.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Consulting</a>
+    <a href="faq.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+    <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+    <a href="blog.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
+  </nav>
+  <div class="mobile-menu-ctas">
+    <a href="consulting.html#book" style="background:var(--blue);color:white;" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book a Call</a>
+  </div>
+</div>
+
+<!-- ══════════════════ BLOG HERO ══════════════════ -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <h1>SSMUH Insights & Guides</h1>
+    <p class="blog-hero-sub">Stay informed on BC's housing evolution. Expert strategies, case studies, and actionable guides for building multiplex wealth on your own lot.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ CATEGORY FILTERS ══════════════════ -->
+<section style="padding: 60px 24px; background: white;">
+  <div class="section-inner">
+    <div class="blog-filters">
+      <button class="filter-btn active" onclick="filterPosts('all')">All Articles</button>
+      <button class="filter-btn" onclick="filterPosts('guides')">Guides</button>
+      <button class="filter-btn" onclick="filterPosts('strategy')">Strategy</button>
+      <button class="filter-btn" onclick="filterPosts('multigenerational')">Multigenerational</button>
+      <button class="filter-btn" onclick="filterPosts('case-studies')">Case Studies</button>
+      <button class="filter-btn" onclick="filterPosts('faq')">FAQ</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FEATURED POST ══════════════════ -->
+<section style="padding: 60px 24px; background: var(--gray-50);">
+  <div class="section-inner">
+    <div class="featured-post">
+      <div class="featured-post-card">
+        <div class="featured-post-img">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="What Bill 44 Means for Tri-Cities Homeowners">
+        </div>
+        <div class="featured-post-body">
+          <span class="featured-post-tag">Guide</span>
+          <p class="featured-post-meta">
+            <span>Apr 2026</span>
+            <span>5 min read</span>
+          </p>
+          <h2 class="featured-post-title">What Bill 44 Means for Tri-Cities Homeowners in 2026</h2>
+          <p class="featured-post-excerpt">BC's Small-Scale Multi-Unit Housing legislation is reshaping residential real estate across the Tri-Cities. This guide breaks down exactly what Bill 44 means for your property, the timelines you can expect, and the financial implications of the new multiplex rules.</p>
+          <a href="#" class="featured-post-link">Read the full guide →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ BLOG GRID ══════════════════ -->
+<section style="padding: 80px 24px; background: white;">
+  <div class="section-inner">
+    <div class="blog-grid">
+      <!-- Card 1 -->
+      <div class="blog-card fade-up">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80" alt="Your Parents Don't Need a Nursing Home">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Multigenerational</span>
+          <p class="blog-card-meta">
+            <span>Apr 2026</span>
+            <span>6 min read</span>
+          </p>
+          <h3 class="blog-card-title">Your Parents Don't Need a Nursing Home — They Need a Multiplex</h3>
+          <p class="blog-card-excerpt">Multigenerational housing on a single lot keeps aging parents close, provides daily care and connection, and builds family wealth. Discover the legal, financial, and emotional benefits of keeping three generations under one roof (or lot).</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="blog-card fade-up">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Fourplex vs. Suite + Laneway">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Investment Strategy</span>
+          <p class="blog-card-meta">
+            <span>Mar 2026</span>
+            <span>7 min read</span>
+          </p>
+          <h3 class="blog-card-title">Fourplex vs. Suite + Laneway: Which Path Is Right for You?</h3>
+          <p class="blog-card-excerpt">Two fundamentally different ways to add rental income to your property. We compare the total cost, financing options, timeline, and exit strategies for a full fourplex redevelopment versus a secondary suite plus laneway home combo.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="blog-card fade-up">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1600607687644-15d37fa9c59e?w=800&q=80" alt="How One Family Created a Multigenerational Compound">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Case Study</span>
+          <p class="blog-card-meta">
+            <span>Mar 2026</span>
+            <span>8 min read</span>
+          </p>
+          <h3 class="blog-card-title">How One Family Created a Multigenerational Compound in Port Moody</h3>
+          <p class="blog-card-excerpt">Meet the Smith family. Their 0.35-hectare Port Moody lot became home to a primary residence, a laneway home for aging parents, and a rental suite. Here's exactly what they did, what they learned, and what their numbers look like three years in.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="blog-card fade-up">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1554224311-beee415c15c7?w=800&q=80" alt="SSMUH Cost Breakdown">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Guide</span>
+          <p class="blog-card-meta">
+            <span>Feb 2026</span>
+            <span>6 min read</span>
+          </p>
+          <h3 class="blog-card-title">SSMUH Cost Breakdown: Every Dollar You'll Spend in 2026</h3>
+          <p class="blog-card-excerpt">Stop guessing. Here's a realistic breakdown of hard and soft costs for different multiplex scenarios in Metro Vancouver. From a secondary suite ($80K–$160K) to a full fourplex redevelopment ($1.2M–$2.2M+), we detail what each phase costs.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="blog-card fade-up">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Can You Really Sell Individual Multiplex Units">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">FAQ</span>
+          <p class="blog-card-meta">
+            <span>Feb 2026</span>
+            <span>5 min read</span>
+          </p>
+          <h3 class="blog-card-title">Can You Really Sell Individual Multiplex Units? Strata Explained</h3>
+          <p class="blog-card-excerpt">Yes — in most cases. Stratification allows you to create separate titles for each unit and sell them individually. But the design, financing, and legal structure all need to support it. Here's what you need to know before you build.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="blog-card fade-up">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="The Wealth Roadmap">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Strategy</span>
+          <p class="blog-card-meta">
+            <span>Jan 2026</span>
+            <span>7 min read</span>
+          </p>
+          <h3 class="blog-card-title">The Wealth Roadmap: From Condo to Multiplex in 5 Steps</h3>
+          <p class="blog-card-excerpt">A practical 5-phase playbook for building real estate wealth. Start where you are (condo, single-family home, or inherited lot) and see how SSMUH fits into a 10- to 20-year wealth-building strategy that keeps you in control of your timeline.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ NEWSLETTER SIGNUP ══════════════════ -->
+<section class="newsletter-section">
+  <div class="section-inner" style="max-width: 600px;">
+    <h2>Get SSMUH Updates Delivered</h2>
+    <p>New guides, case studies, and strategy insights delivered to your inbox every other week.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for signing up!'); this.reset();">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe Now</button>
+    </form>
+    <p style="font-size: 0.8rem; margin-top: 16px; opacity: 0.7;">No spam, unsubscribe anytime. Your privacy is important to us.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">SSMUH<span>.ca</span></div>
+      <p class="footer-desc">Helping BC families use the new multiplex rules to keep kids close, age in place, and build long-term value on their own street.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/zadarealestategroup" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/in/dawar-zada-683b1281/" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ssmuh-guide.html">SSMUH Guide</a></li>
+        <li><a href="for-homeowners.html">For Homeowners</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="areas.html">Areas We Serve</a></li>
+        <li><a href="for-homeowners.html#scenarios">Multiplex Scenarios</a></li>
+        <li><a href="ssmuh-guide.html#playbook">Gentle Density Playbook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:6048083797">604-808-3797</a></li>
+        <li><a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a></li>
+        <li><a href="https://zadagroup.ca">zadagroup.ca</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SSMUH.ca · Dawar Zada Personal Real Estate Corporation · Stonehaus Realty Corp.</span>
+    <span>All rights reserved.</span>
+  </div>
+  <div style="max-width:1280px;margin:20px auto 0;padding:0 24px;">
+    <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);line-height:1.6;">Disclaimer: Information on this site is for general educational purposes and does not constitute engineering, legal, or formal development advice. Always consult qualified professionals before undertaking any development. Financial projections are estimates only. Dawar Zada, PREC* is a licensed REALTOR operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Filter functionality (placeholder)
+function filterPosts(category) {
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // In a real app, this would filter the blog cards
+  console.log('Filtering by:', category);
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
