@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ssmuh.ca/sitemap.xml
