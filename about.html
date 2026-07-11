@@ -26,9 +26,7 @@
       <li><a href="areas.html">Areas</a></li>
       <li><a href="consulting.html">Consulting</a></li>
       <li><a href="faq.html">FAQ</a></li>
-          <li><a href="ssmuh-port-moody.html">Port Moody Guide</a></li>
-          <li><a href="ssmuh-coquitlam.html">Coquitlam Guide</a></li>
-          <li><a href="ssmuh-port-coquitlam.html">Port Coquitlam Guide</a></li>
+          <li><a href="areas.html">City Guides</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="#feasibility" class="nav-cta">Free Feasibility Check</a></li>
     </ul>
@@ -43,15 +41,15 @@
   </div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="ssmuh-guide.html">The Guide</a>
+    <a href="ssmuh-guide.html">Guide</a>
     <a href="for-homeowners.html">Scenarios</a>
-    <a href="areas.html">Areas</a>
+    <a href="areas.html">City Guides</a>
     <a href="consulting.html">Consulting</a>
     <a href="faq.html">FAQ</a>
     <a href="about.html">About</a>
   </nav>
   <div class="mm-cta">
-    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Free Feasibility Check</a>
+    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Check My Lot</a>
     <a href="tel:6048083797" class="btn btn-ghost">Call or Text 604-808-3797</a>
   </div>
 </div>
@@ -194,9 +192,7 @@
           <li><a href="for-homeowners.html">Scenarios</a></li>
           <li><a href="areas.html">Areas We Serve</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="ssmuh-port-moody.html">Port Moody Guide</a></li>
-          <li><a href="ssmuh-coquitlam.html">Coquitlam Guide</a></li>
-          <li><a href="ssmuh-port-coquitlam.html">Port Coquitlam Guide</a></li>
+          <li><a href="areas.html">City Guides</a></li>
         </ul>
       </div>
       <div>
@@ -274,6 +270,35 @@ function sendCallback(f){
   window.addEventListener('scroll',function(){
     if(window.scrollY>document.body.scrollHeight*0.5)fire();
   },{passive:true});
+})();
+</script>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var sel='.section-head,.card,.num-item,.stat,.split>*,.faq-item,.dtable,.lot-svg,.pull';
+  var els=document.querySelectorAll(sel);
+  document.querySelectorAll('.grid-2,.grid-3,.num-list,.stats').forEach(function(g){
+    Array.prototype.forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*80)+'ms';});
+  });
+  function countUp(el){
+    var m=el.textContent.match(/^([^0-9]*)([0-9][0-9,]*)(.*)$/);
+    if(!m||/[A-Za-z]/.test(m[1]))return;
+    var end=parseInt(m[2].replace(/,/g,''),10);
+    if(!isFinite(end)||end===0||end>9999&&m[1]==='')if(end>9999)return;
+    var pre=m[1],suf=m[3],fmt=m[2].indexOf(',')>-1,t0=null,dur=1100;
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);
+      var v=Math.round(end*p);el.textContent=pre+(fmt?v.toLocaleString('en-US'):v)+suf;
+      if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting)return;
+      en.target.classList.add('in');io.unobserve(en.target);
+      if(en.target.classList.contains('stat')){var b=en.target.querySelector('b');if(b)countUp(b);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(e){e.classList.add('rv');io.observe(e);});
 })();
 </script>
 </body>

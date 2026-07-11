@@ -13,7 +13,7 @@
 <section class="hero on-dark" style="min-height:88vh;display:flex;align-items:center">
   <div class="wrap" style="text-align:center;max-width:680px">
     <span class="kicker">Request Received</span>
-    <h1 style="font-size:clamp(2.2rem,4.5vw,3.2rem)">Dawar will be in touch within <span class="em">one business day.</span></h1>
+    <h1 style="font-size:clamp(2.2rem,4.5vw,3.2rem)">You will hear back within <span class="em">one business day.</span></h1>
     <p class="lede" style="margin:24px auto 36px">Your feasibility check is in the queue. In the meantime, the guide covers what to expect from the process.</p>
     <div class="cta-row" style="justify-content:center">
       <a href="ssmuh-guide.html" class="btn btn-bronze">Read the SSMUH Guide</a>
@@ -21,5 +21,34 @@
     </div>
   </div>
 </section>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var sel='.section-head,.card,.num-item,.stat,.split>*,.faq-item,.dtable,.lot-svg,.pull';
+  var els=document.querySelectorAll(sel);
+  document.querySelectorAll('.grid-2,.grid-3,.num-list,.stats').forEach(function(g){
+    Array.prototype.forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*80)+'ms';});
+  });
+  function countUp(el){
+    var m=el.textContent.match(/^([^0-9]*)([0-9][0-9,]*)(.*)$/);
+    if(!m||/[A-Za-z]/.test(m[1]))return;
+    var end=parseInt(m[2].replace(/,/g,''),10);
+    if(!isFinite(end)||end===0||end>9999&&m[1]==='')if(end>9999)return;
+    var pre=m[1],suf=m[3],fmt=m[2].indexOf(',')>-1,t0=null,dur=1100;
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);
+      var v=Math.round(end*p);el.textContent=pre+(fmt?v.toLocaleString('en-US'):v)+suf;
+      if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting)return;
+      en.target.classList.add('in');io.unobserve(en.target);
+      if(en.target.classList.contains('stat')){var b=en.target.querySelector('b');if(b)countUp(b);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(e){e.classList.add('rv');io.observe(e);});
+})();
+</script>
 </body>
 </html>
