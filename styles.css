@@ -264,3 +264,14 @@ footer{background:var(--ink);padding:72px 0 40px;color:rgba(247,244,236,.6);font
   .hero-img{animation:none}
   .rv,.lot-svg .blk{opacity:1;transform:none;transition:none}
 }
+
+/* Call-aside + review stamp + blog */
+.aside-call{border-left:2px solid var(--bronze);background:var(--paper);padding:20px 24px;margin:44px 0;max-width:640px}
+.aside-call p{font-size:.97rem;color:var(--text)}
+.aside-call a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--bronze)}
+.reviewed{font-size:.8rem;color:var(--muted);margin-top:14px}
+.post-meta{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:20px}
+.post-body p{color:var(--text);margin-top:18px;max-width:70ch}
+.post-body h2{font-size:1.7rem;margin-top:44px}
+.post-body ul{margin:18px 0 0 20px;color:var(--text)}
+.post-body li{margin-top:8px}
