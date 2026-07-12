@@ -27,10 +27,10 @@
       <li><a href="for-homeowners.html">Scenarios</a></li>
       <li><a href="areas.html">City Guides</a></li>
       <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="faq.html">FAQ</a></li>
-          <li><a href="areas.html">City Guides</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#feasibility" class="nav-cta">Check My Lot</a></li>
+      <li><a href="#feasibility" class="nav-cta">Free Feasibility Check</a></li>
     </ul>
     <button class="hamburger" onclick="document.getElementById('mm').classList.add('open')" aria-label="Menu">&#9776;</button>
   </div>
@@ -52,7 +52,7 @@
     <a href="about.html">About</a>
   </nav>
   <div class="mm-cta">
-    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Check My Lot</a>
+    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Free Feasibility Check</a>
     <a href="tel:6048083797" class="btn btn-ghost">Call or Text 604-808-3797</a>
   </div>
 </div>
@@ -68,16 +68,15 @@
     <span class="kicker">Small-Scale Multi-Unit Housing &middot; British Columbia</span>
     <h1>Your lot is worth more than <span class="em">one home.</span></h1>
     <p class="lede">BC's SSMUH rules let most residential lots hold up to four homes, and up to six near transit, no rezoning required. Find out what your property allows, what it costs, and whether it makes sense.</p>
-    <form class="qs" onsubmit="event.preventDefault();var v=this.q.value.trim();if(v){document.getElementById('f-address').value=v;}sessionStorage.setItem('nudged','1');document.getElementById('feasibility').scrollIntoView({behavior:'smooth'});document.getElementById('f-name').focus({preventScroll:true});">
+    <form class="qs" onsubmit="event.preventDefault();var v=this.q.value.trim();if(v){document.getElementById('f-address').value=v;}sessionStorage.setItem('nudged','1');var t=document.getElementById('feasibility');window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-92,behavior:'smooth'});document.getElementById('f-name').focus({preventScroll:true});">
       <input name="q" type="text" placeholder="Enter your property address" aria-label="Property address">
       <button type="submit" class="btn btn-bronze">Check My Lot</button>
     </form>
     <p class="qs-alt">Free feasibility check, answered within one business day. Or call/text <a href="tel:6048083797">604-808-3797</a>.</p>
-    <div class="stats">
-      <div class="stat"><b>First</b><span>multiplex applicant in Port Moody</span></div>
-      <div class="stat"><b>20+ years</b><span>in Metro Vancouver real estate</span></div>
-      <div class="stat"><b>4 to 6</b><span>homes allowed per lot under Bill 44</span></div>
-      <div class="stat"><b>1 business day</b><span>feasibility response, free</span></div>
+    <div class="stats stats-3">
+      <div class="stat"><b>Biggest</b><span>zoning changes in BC history</span></div>
+      <div class="stat"><b>4 to 6</b><span>homes now legal on most residential lots in BC</span></div>
+      <div class="stat"><b>Zero</b><span>rezonings or public hearings required</span></div>
     </div>
   </div>
 </section>
@@ -155,7 +154,8 @@
           <li>20+ years in Metro Vancouver residential real estate</li>
           <li>Based in the Tri-Cities, consulting across BC</li>
         </ul>
-        <div class="cta-row" style="margin-top:34px">
+        <div class="trust-id"><img src="assets/dawar.jpg" alt="Dawar Zada, PREC" onerror="this.parentNode.style.display='none'"><div><b>Dawar Zada, PREC</b><span>Team Lead, Zada Group &middot; Stonehaus Realty Corp.</span></div></div>
+        <div class="cta-row" style="margin-top:30px">
           <a href="about.html" class="btn btn-ghost">Meet the Team</a>
           <a href="consulting.html" class="btn btn-bronze">How Consulting Works</a>
         </div>
@@ -253,9 +253,8 @@
         <ul>
           <li><a href="ssmuh-guide.html">The SSMUH Guide</a></li>
           <li><a href="for-homeowners.html">Scenarios</a></li>
-          <li><a href="areas.html">Areas We Serve</a></li>
-          <li><a href="faq.html">FAQ</a></li>
           <li><a href="areas.html">City Guides</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
@@ -263,6 +262,7 @@
         <h4>Work With Us</h4>
         <ul>
           <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="#feasibility">Free Feasibility Check</a></li>
         </ul>
@@ -280,7 +280,7 @@
     </div>
     <div class="foot-legal">
       <p>&copy; <span id="yr"></span> SSMUH.ca &middot; Dawar Zada Personal Real Estate Corporation &middot; Stonehaus Realty Corp.</p>
-      <p>Information on this site is for general educational purposes and does not constitute legal, engineering, tax, or formal development advice. Cost and rental figures are estimates only; always consult qualified professionals and confirm current rules with your municipality. Dawar Zada, PREC* is a licensed REALTOR&reg; operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+      <p>Information on this site is for general educational purposes and does not constitute legal, engineering, tax, or formal development advice. Cost and rental figures are estimates only; always consult qualified professionals and confirm current rules with your municipality. Dawar Zada, PREC is a licensed REALTOR&reg; operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
     </div>
   </div>
 </footer>
@@ -348,7 +348,7 @@ function sendCallback(f){
     var m=el.textContent.match(/^([^0-9]*)([0-9][0-9,]*)(.*)$/);
     if(!m||/[A-Za-z]/.test(m[1]))return;
     var end=parseInt(m[2].replace(/,/g,''),10);
-    if(!isFinite(end)||end===0||end>9999&&m[1]==='')if(end>9999)return;
+    if(!isFinite(end)||end===0||end>9999)return;
     var pre=m[1],suf=m[3],fmt=m[2].indexOf(',')>-1,t0=null,dur=1100;
     function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);
       var v=Math.round(end*p);el.textContent=pre+(fmt?v.toLocaleString('en-US'):v)+suf;

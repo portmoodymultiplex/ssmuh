@@ -33,7 +33,7 @@
     var m=el.textContent.match(/^([^0-9]*)([0-9][0-9,]*)(.*)$/);
     if(!m||/[A-Za-z]/.test(m[1]))return;
     var end=parseInt(m[2].replace(/,/g,''),10);
-    if(!isFinite(end)||end===0||end>9999&&m[1]==='')if(end>9999)return;
+    if(!isFinite(end)||end===0||end>9999)return;
     var pre=m[1],suf=m[3],fmt=m[2].indexOf(',')>-1,t0=null,dur=1100;
     function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);
       var v=Math.round(end*p);el.textContent=pre+(fmt?v.toLocaleString('en-US'):v)+suf;

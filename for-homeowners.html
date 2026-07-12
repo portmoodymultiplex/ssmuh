@@ -25,10 +25,10 @@
       <li><a href="for-homeowners.html">Scenarios</a></li>
       <li><a href="areas.html">City Guides</a></li>
       <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="faq.html">FAQ</a></li>
-          <li><a href="areas.html">City Guides</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#feasibility" class="nav-cta">Check My Lot</a></li>
+      <li><a href="#feasibility" class="nav-cta">Free Feasibility Check</a></li>
     </ul>
     <button class="hamburger" onclick="document.getElementById('mm').classList.add('open')" aria-label="Menu">&#9776;</button>
   </div>
@@ -50,7 +50,7 @@
     <a href="about.html">About</a>
   </nav>
   <div class="mm-cta">
-    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Check My Lot</a>
+    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Free Feasibility Check</a>
     <a href="tel:6048083797" class="btn btn-ghost">Call or Text 604-808-3797</a>
   </div>
 </div>
@@ -67,23 +67,37 @@
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Path One</span>
-      <h2>House + two suites</h2>
-      <p class="lede" style="margin-top:18px">Keep your main home and add two legal suites. Nobody moves, and the suites carry a meaningful share of the mortgage.</p>
+    <div class="split">
+      <div>
+        <span class="kicker">Path One &middot; 3 Homes</span>
+        <h2>House + two suites</h2>
+        <p class="lede" style="margin-top:18px">Keep your main home and add two legal suites. Nobody moves, and the suites carry a meaningful share of the mortgage.</p>
+        <ul class="checks" style="margin-top:26px">
+          <li>Legal means permitted: separate entrance, proper ceiling heights, egress windows, interconnected alarms</li>
+          <li>Both suites count toward your lot's three or four unit total</li>
+          <li>The building footprint does not change, so setbacks and site coverage stay untouched</li>
+        </ul>
+      </div>
+      <svg class="lot-svg" viewBox="0 0 320 212" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of a house with a main-floor suite at the rear and a basement suite below grade">
+        <g class="tree"><line x1="34" y1="160" x2="34" y2="136"/><circle cx="34" cy="120" r="15"/></g>
+        <polygon class="blk" points="160,22 248,58 72,58"/>
+        <rect class="blk" x="84" y="60" width="152" height="100"/>
+        <text class="tl" x="138" y="94" text-anchor="middle">MAIN HOME</text>
+        <rect class="win" x="98" y="72" width="17" height="12"/>
+        <rect class="win" x="122" y="72" width="17" height="12"/>
+        <rect class="win" x="146" y="72" width="17" height="12"/>
+        <rect class="door" x="96" y="128" width="13" height="32"/>
+        <rect class="blk b3" x="190" y="112" width="46" height="48"/>
+        <text class="tl" x="213" y="132" text-anchor="middle" style="font-size:8px;letter-spacing:.08em">SUITE</text>
+        <text class="tl" x="213" y="143" text-anchor="middle" style="font-size:8px;letter-spacing:.08em">TWO</text>
+        <line class="grade" x1="16" y1="160" x2="304" y2="160"/>
+        <text x="280" y="155">GRADE</text>
+        <rect class="blk b2" x="84" y="164" width="152" height="30"/>
+        <text class="tl" x="160" y="183" text-anchor="middle">SUITE ONE</text>
+        <text x="160" y="208" text-anchor="middle">STREET</text>
+      </svg>
     </div>
-<svg class="lot-svg" viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lot diagram: main home with two suites">
-  <rect class="lot" x="12" y="12" width="296" height="168"/>
-  <rect class="blk" x="86" y="46" width="148" height="72"/>
-  <text class="tl" x="160" y="86" text-anchor="middle">MAIN HOME</text>
-  <rect class="blk b2" x="86" y="122" width="148" height="24"/>
-  <text class="tl" x="160" y="138" text-anchor="middle">SUITE ONE</text>
-  <rect class="blk b2" x="86" y="150" width="148" height="24"/>
-  <text class="tl" x="160" y="166" text-anchor="middle">SUITE TWO</text>
-  <text x="160" y="200" text-anchor="middle">STREET</text>
-  <text x="160" y="34" text-anchor="middle">3 HOMES &middot; ONE LOT &middot; NOBODY MOVES</text>
-</svg>
-    <div class="grid-3">
+    <div class="grid-3" style="margin-top:56px">
       <div class="card"><span class="card-tag">Your Home</span><h3>Keep the main house</h3><p>You stay put. Phased construction is possible, so life continues while the suites take shape.</p></div>
       <div class="card"><span class="card-tag">Suite One</span><h3>1 to 2 bedrooms</h3><p>Typical cost $80K to $160K. Typical rent $1,900 to $2,400 per month. The highest return on the smallest spend.</p></div>
       <div class="card"><span class="card-tag">Suite Two</span><h3>Double the income</h3><p>A second suite at similar cost brings combined rental income to roughly $3,800 to $4,800 per month on the same lot.</p></div>
@@ -93,25 +107,44 @@
 
 <section class="section paper">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Path Two</span>
-      <h2>Fourplex</h2>
-      <p class="lede" style="margin-top:18px">Four self-contained homes on one lot, each with its own entrance. The biggest project, and usually the strongest financial outcome.</p>
+    <div class="split">
+      <div>
+        <span class="kicker">Path Two &middot; 4 Homes</span>
+        <h2>Fourplex</h2>
+        <p class="lede" style="margin-top:18px">Four self-contained homes on one lot, each with its own entrance. The biggest project, and usually the strongest financial outcome.</p>
+        <ul class="checks" style="margin-top:26px">
+          <li>Quadplex 01 and 02 in the Province's free design catalogue are ready-made starting points</li>
+          <li>Two or three storeys, 2 to 3 bedrooms per home, garages optional</li>
+          <li>Decide strata or rental before drawings start; the exit you want shapes the design</li>
+        </ul>
+      </div>
+      <svg class="lot-svg" viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site plan: four homes in a two-by-two layout, each with a private entrance off a shared walkway">
+        <rect class="lot" x="12" y="10" width="296" height="172"/>
+        <rect class="setb" x="30" y="26" width="260" height="140"/>
+        <text x="236" y="22" style="font-size:8px">SETBACK LINE</text>
+        <g class="tree"><circle cx="46" cy="48" r="11"/></g>
+        <g class="tree"><circle cx="276" cy="144" r="13"/></g>
+        <line class="walk" x1="160" y1="182" x2="160" y2="32"/>
+        <rect class="blk" x="66" y="34" width="86" height="56"/>
+        <line class="ridge" x1="66" y1="62" x2="152" y2="62"/>
+        <text class="tl" x="109" y="66" text-anchor="middle">UNIT 1</text>
+        <rect class="door" x="146" y="52" width="6" height="14"/>
+        <rect class="blk" x="168" y="34" width="86" height="56"/>
+        <line class="ridge" x1="168" y1="62" x2="254" y2="62"/>
+        <text class="tl" x="211" y="66" text-anchor="middle">UNIT 2</text>
+        <rect class="door" x="168" y="52" width="6" height="14"/>
+        <rect class="blk b3" x="66" y="110" width="86" height="56"/>
+        <line class="ridge" x1="66" y1="138" x2="152" y2="138"/>
+        <text class="tl" x="109" y="142" text-anchor="middle">UNIT 3</text>
+        <rect class="door" x="146" y="128" width="6" height="14"/>
+        <rect class="blk b3" x="168" y="110" width="86" height="56"/>
+        <line class="ridge" x1="168" y1="138" x2="254" y2="138"/>
+        <text class="tl" x="211" y="142" text-anchor="middle">UNIT 4</text>
+        <rect class="door" x="168" y="128" width="6" height="14"/>
+        <text x="160" y="200" text-anchor="middle">STREET &middot; 4 PRIVATE ENTRANCES</text>
+      </svg>
     </div>
-<svg class="lot-svg" viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lot diagram: fourplex with four private entrances">
-  <rect class="lot" x="12" y="12" width="296" height="168"/>
-  <rect class="blk" x="66" y="44" width="90" height="62"/>
-  <text class="tl" x="111" y="79" text-anchor="middle">UNIT 1</text>
-  <rect class="blk" x="164" y="44" width="90" height="62"/>
-  <text class="tl" x="209" y="79" text-anchor="middle">UNIT 2</text>
-  <rect class="blk b3" x="66" y="112" width="90" height="62"/>
-  <text class="tl" x="111" y="147" text-anchor="middle">UNIT 3</text>
-  <rect class="blk b3" x="164" y="112" width="90" height="62"/>
-  <text class="tl" x="209" y="147" text-anchor="middle">UNIT 4</text>
-  <text x="160" y="200" text-anchor="middle">STREET &middot; 4 PRIVATE ENTRANCES</text>
-  <text x="160" y="34" text-anchor="middle">STRATA-READY &middot; SELL, RENT, OR KEEP</text>
-</svg>
-    <div class="grid-3">
+    <div class="grid-3" style="margin-top:56px">
       <div class="card"><span class="card-tag">The Build</span><h3>Full redevelopment</h3><p>Typical all-in cost $1.2M to $2.2M+ depending on size and finish. Design for stratification from day one so every exit stays open.</p></div>
       <div class="card"><span class="card-tag">The Income</span><h3>$8K to $11K gross monthly</h3><p>Four units renting between $1,900 and $4,000 each depending on bedroom count. Live in one and the other three still work hard.</p></div>
       <div class="card"><span class="card-tag">The Exit</span><h3>Strata and sell, or hold</h3><p>Sell units individually, keep the building as a rental asset, or mix both. Multiple exit strategies is the point.</p></div>
@@ -121,23 +154,40 @@
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Path Three</span>
-      <h2>House + laneway + suite</h2>
-      <p class="lede" style="margin-top:18px">Keep the main house, add a laneway home at the back and a suite inside. Flexibility without full redevelopment, and the best fit for multigenerational plans.</p>
+    <div class="split">
+      <div>
+        <span class="kicker">Path Three &middot; 3 Homes</span>
+        <h2>House + laneway + suite</h2>
+        <p class="lede" style="margin-top:18px">Keep the main house, add a laneway home at the back and a suite inside. Flexibility without full redevelopment, and the best fit for multigenerational plans.</p>
+        <ul class="checks" style="margin-top:26px">
+          <li>The catalogue's three free ADU designs run from a single-storey 1 bedroom to a 3 bedroom with garage</li>
+          <li>ADU 01 fits a 25 by 21 foot footprint, sized for a standard 33 foot lot</li>
+          <li>Phase it: laneway first, suite second, and life at home continues between permits</li>
+        </ul>
+      </div>
+      <svg class="lot-svg" viewBox="0 0 320 224" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site plan: main home with a suite, garden, and a laneway home at the rear lane">
+        <text x="242" y="12" text-anchor="middle">LANE</text>
+        <rect class="lot" x="12" y="18" width="296" height="180"/>
+        <rect class="setb" x="28" y="32" width="264" height="152"/>
+        <g class="tree"><circle cx="62" cy="58" r="13"/></g>
+        <g class="tree"><circle cx="152" cy="52" r="9"/></g>
+        <text x="100" y="76" text-anchor="middle">GARDEN</text>
+        <path class="walk" d="M242,86 L242,198"/>
+        <rect class="blk b3" x="200" y="36" width="84" height="48"/>
+        <line class="ridge" x1="200" y1="60" x2="284" y2="60"/>
+        <text class="tl" x="242" y="64" text-anchor="middle">LANEWAY</text>
+        <rect class="door" x="236" y="78" width="12" height="6"/>
+        <rect class="blk" x="46" y="90" width="140" height="66"/>
+        <line class="ridge" x1="46" y1="123" x2="186" y2="123"/>
+        <text class="tl" x="116" y="127" text-anchor="middle">MAIN HOME</text>
+        <rect class="door" x="106" y="150" width="12" height="6"/>
+        <rect class="blk b2" x="46" y="160" width="140" height="24"/>
+        <text class="tl" x="116" y="176" text-anchor="middle">SUITE</text>
+        <rect class="door" x="46" y="164" width="5" height="14"/>
+        <text x="160" y="220" text-anchor="middle">STREET</text>
+      </svg>
     </div>
-<svg class="lot-svg" viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lot diagram: main home with suite plus laneway home at the rear">
-  <rect class="lot" x="12" y="12" width="296" height="168"/>
-  <rect class="blk b3" x="196" y="30" width="86" height="46"/>
-  <text class="tl" x="239" y="57" text-anchor="middle">LANEWAY</text>
-  <rect class="blk" x="46" y="88" width="140" height="62"/>
-  <text class="tl" x="116" y="118" text-anchor="middle">MAIN HOME</text>
-  <rect class="blk b2" x="46" y="154" width="140" height="22"/>
-  <text class="tl" x="116" y="169" text-anchor="middle">SUITE</text>
-  <text x="160" y="200" text-anchor="middle">STREET</text>
-  <text x="252" y="22" text-anchor="middle">LANE</text>
-</svg>
-    <div class="grid-3">
+    <div class="grid-3" style="margin-top:56px">
       <div class="card"><span class="card-tag">Laneway Home</span><h3>2 to 3 bedrooms</h3><p>Typical cost $250K to $450K, typical rent $2,400 to $3,100 per month. Also ideal for aging parents or an adult child living independently.</p></div>
       <div class="card"><span class="card-tag">Secondary Suite</span><h3>Inside the main home</h3><p>Typical cost $80K to $160K. A qualifying suite for a senior or family member with a disability can return up to $7,500 through the federal MHRTC.</p></div>
       <div class="card"><span class="card-tag">The Shape</span><h3>Phased and livable</h3><p>Laneway first, suite second, renovations as budget allows. Combined rental potential of roughly $4,300 to $5,500 per month if both units rent.</p></div>
@@ -145,16 +195,73 @@
   </div>
 </section>
 
-<section class="section dark on-dark" id="multigen">
-  <div class="wrap-narrow">
-    <span class="kicker">Why Homeowners Do This</span>
-    <h2>Four outcomes, one lot</h2>
-    <div class="num-list" style="margin-top:44px">
-      <div class="num-item"><span class="num">01</span><div><h3>Downsize without leaving your street</h3><p>Build a smaller, accessible home on your own lot and stay in the neighbourhood you know.</p></div></div>
-      <div class="num-item"><span class="num">02</span><div><h3>Keep adult kids close</h3><p>Independent suites mean proximity without sharing walls. They build equity; you keep Sunday dinners.</p></div></div>
-      <div class="num-item"><span class="num">03</span><div><h3>Care for aging parents</h3><p>A laneway home or ground-level suite keeps parents nearby with dignity and their own front door.</p></div></div>
-      <div class="num-item"><span class="num">04</span><div><h3>Build income and long-term value</h3><p>Rental units pay down the mortgage while the property works as a multi-unit asset instead of a single home.</p></div></div>
+<!-- PROVINCIAL DESIGN CATALOGUE -->
+<section class="section paper" id="catalogue">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Free Provincial Designs</span>
+      <h2>The Province already drew the plans. <span class="em">Ten of them.</span></h2>
+      <p class="lede" style="margin-top:18px">In September 2024, BC published a catalogue of standardized, customizable home designs for SSMUH lots, free for any homeowner or builder to use. Two or three storeys, one to four bedrooms, optional garages, sized for real BC lots down to a 33 foot frontage. Municipalities can choose to fast-track projects that use them.</p>
     </div>
+    <div style="overflow-x:auto">
+      <table class="dtable">
+        <thead><tr><th>Design</th><th>Homes</th><th>Storeys</th><th>Per Home</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>ADU 01</td><td>1</td><td>2</td><td>2 bed &middot; 1.5 bath</td><td>A garden suite on a 33 ft lot, 25 by 21 ft footprint</td></tr>
+          <tr><td>ADU 02</td><td>1</td><td>1</td><td>1 bed &middot; 1 bath</td><td>Aging in place, no stairs</td></tr>
+          <tr><td>ADU 03</td><td>1</td><td>2</td><td>3 bed &middot; 2.5 bath &middot; garage</td><td>Family-sized laneway living</td></tr>
+          <tr><td>Duplex 01</td><td>2</td><td>2</td><td>2 bed &middot; 1.5 bath</td><td>The simplest two-home build</td></tr>
+          <tr><td>Duplex 02</td><td>2</td><td>3</td><td>3 bed &middot; 2.5 bath</td><td>More bedrooms on the same footprint</td></tr>
+          <tr><td>Duplex 03</td><td>2</td><td>2 + 3</td><td>2 bed and 3 bed mix</td><td>Two different household sizes</td></tr>
+          <tr><td>Triplex 01</td><td>3</td><td>3, stacked</td><td>2 bed &middot; 1 bath</td><td>Narrow lots where three side-by-side homes will not fit</td></tr>
+          <tr><td>Quadplex 01</td><td>4</td><td>3</td><td>2 bed &middot; garage</td><td>Four homes with indoor parking</td></tr>
+          <tr><td>Quadplex 02</td><td>4</td><td>2 + 3</td><td>2 bed and 3 bed mix</td><td>The classic fourplex</td></tr>
+          <tr><td>Townhouse 01</td><td>4</td><td>2 + 3</td><td>2 bed and 4 bed mix</td><td>Row homes for families</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:20px;font-size:.9rem;color:var(--muted)">The catalogue ships with free design files (CAD, Revit, energy models) and a third-party costing estimate. Diagrams are illustrative; permits still require site-specific drawings.</p>
+    <div class="cta-row" style="margin-top:28px">
+      <a href="assets/bc-standardized-designs-catalogue.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Read the Catalogue (PDF)</a>
+      <a href="#feasibility" class="btn btn-bronze">Which Design Fits My Lot?</a>
+    </div>
+  </div>
+</section>
+
+<section class="section dark on-dark" id="multigen">
+  <div class="wrap">
+    <div class="split">
+      <img class="split-img" src="assets/home-1.jpg" alt="Warm multigenerational living space" onerror="this.style.display='none'">
+      <div>
+        <span class="kicker">Why Homeowners Do This</span>
+        <h2>Four outcomes, one lot</h2>
+        <div class="num-list" style="margin-top:36px">
+          <div class="num-item"><span class="num">01</span><div><h3>Downsize without leaving your street</h3><p>Build a smaller, accessible home on your own lot and stay in the neighbourhood you know.</p></div></div>
+          <div class="num-item"><span class="num">02</span><div><h3>Keep adult kids close</h3><p>Independent suites mean proximity without sharing walls. They build equity; you keep Sunday dinners.</p></div></div>
+          <div class="num-item"><span class="num">03</span><div><h3>Care for aging parents</h3><p>A laneway home or ground-level suite keeps parents nearby with dignity and their own front door.</p></div></div>
+          <div class="num-item"><span class="num">04</span><div><h3>Build income and long-term value</h3><p>Rental units pay down the mortgage while the property works as a multi-unit asset instead of a single home.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="section paper" id="case-study">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Case Study &middot; Port Moody</span>
+      <h2>A 75 year old rancher, redrawn as <span class="em">four homes.</span></h2>
+      <p class="lede" style="margin-top:18px">A recent redevelopment on a 10,000 sq ft lot. The applicants designed a duplex to replace the existing rancher, plus a second duplex at the rear of the lot, four homes in total, with no rezoning and no public hearing. Several of the homes are reserved for aging family members. Multiplex is ideal for exactly this kind of generational living.</p>
+    </div>
+    <div class="ba-grid">
+      <figure class="ba"><img src="assets/case-before-front.jpg" alt="Existing 75 year old rancher, street view"><figcaption><span>Existing &middot; Street</span>The rancher from the road</figcaption></figure>
+      <figure class="ba"><img src="assets/case-after-front.jpg" alt="Rendering of the proposed front duplex, street elevation"><figcaption><span>Proposed &middot; Street</span>Front duplex, street elevation</figcaption></figure>
+      <figure class="ba"><img src="assets/case-before-back.jpg" alt="Existing rancher, rear yard and deck"><figcaption><span>Existing &middot; Rear</span>The rear yard and deck</figcaption></figure>
+      <figure class="ba"><img src="assets/case-after-back.jpg" alt="Rendering of the proposed front duplex, rear elevation"><figcaption><span>Proposed &middot; Rear</span>Rear elevation &middot; a second duplex sits behind</figcaption></figure>
+    </div>
+    <video id="case-video" controls playsinline preload="metadata" style="width:100%;margin-top:28px;border:1px solid var(--line);display:none"></video>
+    <p class="reviewed">Wondering what this process looks like on your lot? Walk through it with us on a <a class="textlink" href="https://calendly.com/dawar-zadagroup/30min" target="_blank" rel="noopener">30-minute call</a>.</p>
   </div>
 </section>
 
@@ -215,9 +322,8 @@
         <ul>
           <li><a href="ssmuh-guide.html">The SSMUH Guide</a></li>
           <li><a href="for-homeowners.html">Scenarios</a></li>
-          <li><a href="areas.html">Areas We Serve</a></li>
-          <li><a href="faq.html">FAQ</a></li>
           <li><a href="areas.html">City Guides</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
@@ -225,6 +331,7 @@
         <h4>Work With Us</h4>
         <ul>
           <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="#feasibility">Free Feasibility Check</a></li>
         </ul>
@@ -242,7 +349,7 @@
     </div>
     <div class="foot-legal">
       <p>&copy; <span id="yr"></span> SSMUH.ca &middot; Dawar Zada Personal Real Estate Corporation &middot; Stonehaus Realty Corp.</p>
-      <p>Information on this site is for general educational purposes and does not constitute legal, engineering, tax, or formal development advice. Cost and rental figures are estimates only; always consult qualified professionals and confirm current rules with your municipality. Dawar Zada, PREC* is a licensed REALTOR&reg; operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+      <p>Information on this site is for general educational purposes and does not constitute legal, engineering, tax, or formal development advice. Cost and rental figures are estimates only; always consult qualified professionals and confirm current rules with your municipality. Dawar Zada, PREC is a licensed REALTOR&reg; operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
     </div>
   </div>
 </footer>
@@ -270,6 +377,9 @@
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+fetch('assets/case-study.mp4',{method:'HEAD'}).then(function(r){
+  if(r.ok){var v=document.getElementById('case-video');v.src='assets/case-study.mp4';v.style.display='block';}
+}).catch(function(){});
 function closeNudge(){document.getElementById('nudge').classList.remove('show');sessionStorage.setItem('nudged','1');}
 function sendCallback(f){
   var d=new URLSearchParams(new FormData(f)).toString();
@@ -310,7 +420,7 @@ function sendCallback(f){
     var m=el.textContent.match(/^([^0-9]*)([0-9][0-9,]*)(.*)$/);
     if(!m||/[A-Za-z]/.test(m[1]))return;
     var end=parseInt(m[2].replace(/,/g,''),10);
-    if(!isFinite(end)||end===0||end>9999&&m[1]==='')if(end>9999)return;
+    if(!isFinite(end)||end===0||end>9999)return;
     var pre=m[1],suf=m[3],fmt=m[2].indexOf(',')>-1,t0=null,dur=1100;
     function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);
       var v=Math.round(end*p);el.textContent=pre+(fmt?v.toLocaleString('en-US'):v)+suf;

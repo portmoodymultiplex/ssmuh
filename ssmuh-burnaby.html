@@ -27,10 +27,10 @@
       <li><a href="for-homeowners.html">Scenarios</a></li>
       <li><a href="areas.html">City Guides</a></li>
       <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="faq.html">FAQ</a></li>
-          <li><a href="areas.html">City Guides</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#feasibility" class="nav-cta">Check My Lot</a></li>
+      <li><a href="#feasibility" class="nav-cta">Free Feasibility Check</a></li>
     </ul>
     <button class="hamburger" onclick="document.getElementById('mm').classList.add('open')" aria-label="Menu">&#9776;</button>
   </div>
@@ -52,7 +52,7 @@
     <a href="about.html">About</a>
   </nav>
   <div class="mm-cta">
-    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Check My Lot</a>
+    <a href="#feasibility" class="btn btn-primary" onclick="document.getElementById('mm').classList.remove('open')">Free Feasibility Check</a>
     <a href="tel:6048083797" class="btn btn-ghost">Call or Text 604-808-3797</a>
   </div>
 </div>
@@ -62,7 +62,7 @@
     <span class="kicker">City Guide &middot; Burnaby</span>
     <h1 style="font-size:clamp(2.2rem,4.5vw,3.4rem)">SSMUH in Burnaby: generous on paper, <span class="em">tightened in practice.</span></h1>
     <p class="lede" style="margin-top:22px">Burnaby consolidated twelve legacy residential districts into one R1 SSMUH zone in June 2024, then trimmed the building envelope in October 2025. Both halves of that story matter for your lot.</p>
-    <form class="qs" onsubmit="event.preventDefault();var v=this.q.value.trim();if(v){document.getElementById('f-address').value=v;}sessionStorage.setItem('nudged','1');document.getElementById('feasibility').scrollIntoView({behavior:'smooth'});document.getElementById('f-name').focus({preventScroll:true});">
+    <form class="qs" onsubmit="event.preventDefault();var v=this.q.value.trim();if(v){document.getElementById('f-address').value=v;}sessionStorage.setItem('nudged','1');var t=document.getElementById('feasibility');window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-92,behavior:'smooth'});document.getElementById('f-name').focus({preventScroll:true});">
       <input name="q" type="text" placeholder="Enter your property address" aria-label="Property address">
       <button type="submit" class="btn btn-bronze">Check My Lot</button>
     </form>
@@ -198,9 +198,8 @@
         <ul>
           <li><a href="ssmuh-guide.html">The SSMUH Guide</a></li>
           <li><a href="for-homeowners.html">Scenarios</a></li>
-          <li><a href="areas.html">Areas We Serve</a></li>
-          <li><a href="faq.html">FAQ</a></li>
           <li><a href="areas.html">City Guides</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
@@ -208,6 +207,7 @@
         <h4>Work With Us</h4>
         <ul>
           <li><a href="consulting.html">Consulting</a></li>
+      <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="#feasibility">Free Feasibility Check</a></li>
         </ul>
@@ -225,7 +225,7 @@
     </div>
     <div class="foot-legal">
       <p>&copy; <span id="yr"></span> SSMUH.ca &middot; Dawar Zada Personal Real Estate Corporation &middot; Stonehaus Realty Corp.</p>
-      <p>Information on this site is for general educational purposes and does not constitute legal, engineering, tax, or formal development advice. Cost and rental figures are estimates only; always consult qualified professionals and confirm current rules with your municipality. Dawar Zada, PREC* is a licensed REALTOR&reg; operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
+      <p>Information on this site is for general educational purposes and does not constitute legal, engineering, tax, or formal development advice. Cost and rental figures are estimates only; always consult qualified professionals and confirm current rules with your municipality. Dawar Zada, PREC is a licensed REALTOR&reg; operating as a Personal Real Estate Corporation through Stonehaus Realty Corp., an independently owned and operated brokerage in British Columbia.</p>
     </div>
   </div>
 </footer>
@@ -293,7 +293,7 @@ function sendCallback(f){
     var m=el.textContent.match(/^([^0-9]*)([0-9][0-9,]*)(.*)$/);
     if(!m||/[A-Za-z]/.test(m[1]))return;
     var end=parseInt(m[2].replace(/,/g,''),10);
-    if(!isFinite(end)||end===0||end>9999&&m[1]==='')if(end>9999)return;
+    if(!isFinite(end)||end===0||end>9999)return;
     var pre=m[1],suf=m[3],fmt=m[2].indexOf(',')>-1,t0=null,dur=1100;
     function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);
       var v=Math.round(end*p);el.textContent=pre+(fmt?v.toLocaleString('en-US'):v)+suf;

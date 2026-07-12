@@ -275,3 +275,42 @@ footer{background:var(--ink);padding:72px 0 40px;color:rgba(247,244,236,.6);font
 .post-body h2{font-size:1.7rem;margin-top:44px}
 .post-body ul{margin:18px 0 0 20px;color:var(--text)}
 .post-body li{margin-top:8px}
+
+
+/* Case study before/after */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.ba{margin:0}
+.ba img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}
+.ba figcaption{margin-top:12px;font-size:.92rem;color:var(--muted)}
+.ba figcaption span{display:block;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}
+@media(max-width:900px){.ba-grid{grid-template-columns:1fr}}
+
+/* Trust identity row */
+.trust-id{display:flex;gap:16px;align-items:center;margin-top:30px}
+.trust-id img{width:64px;height:64px;object-fit:cover;border:1px solid var(--line-dark)}
+.trust-id b{display:block;font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--bone)}
+.trust-id span{font-size:.85rem;color:rgba(247,244,236,.6)}
+
+/* Site-plan and section diagram details */
+.lot-svg .setb{fill:none;stroke:var(--bronze);stroke-width:1;stroke-dasharray:2 3;opacity:.45}
+.lot-svg .tree{fill:none;stroke:var(--sage);stroke-width:1.2;opacity:0;transition:opacity .7s ease .6s}
+.rv.in .tree{opacity:.9}
+.lot-svg .walk{fill:none;stroke:var(--muted);stroke-width:1.1;stroke-dasharray:2 3;opacity:0;transition:opacity .7s ease .75s}
+.rv.in .walk{opacity:.8}
+.lot-svg .door{fill:var(--bone);stroke:var(--muted);stroke-width:.6;opacity:0;transition:opacity .5s ease .7s}
+.rv.in .door{opacity:1}
+.lot-svg .win{fill:rgba(247,244,236,.5);opacity:0;transition:opacity .5s ease .7s}
+.rv.in .win{opacity:1}
+.lot-svg .ridge{stroke:rgba(247,244,236,.35);stroke-width:1;opacity:0;transition:opacity .5s ease .7s}
+.rv.in .ridge{opacity:1}
+.lot-svg .grade{stroke:var(--muted);stroke-width:1.4}
+@media(prefers-reduced-motion:reduce){.lot-svg .tree,.lot-svg .walk,.lot-svg .door,.lot-svg .win,.lot-svg .ridge{opacity:1;transition:none}}
+
+/* 3-across hero stats */
+.stats-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.stats.stats-3{grid-template-columns:repeat(3,1fr)}.stats-3 .stat{padding:18px 10px}.stats-3 .stat b{font-size:1.25rem}.stats-3 .stat span{font-size:.76rem}}
+
+/* Case study: aligned 2x2 grid, uniform cells */
+.ba-grid{row-gap:36px}
+.ba img{aspect-ratio:3/2}
+.ba figcaption{margin-top:14px}
